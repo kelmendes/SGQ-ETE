@@ -2,32 +2,14 @@
 <html>
     <head>
         <title>Projeto Integrador I</title>
-        <!-- meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <!-- COR Barra Mobile -->
-        <!-- Chrome, Firefox OS, Opera and Vivaldi -->
-        <meta name="theme-color" content="##000080">
-        <!-- Windows Phone -->
-        <meta name="msapplication-navbutton-color" content="##000080">
-        <!-- iOS Safari -->
-        <meta name="apple-mobile-web-app-status-bar-style" content="##000080">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+        <!-- ADICIONANDO HEADER PADRÃO -->
+        <?php include './template/header.php'; ?>
+
     </head>
     <body>
-        <!-- ======================
-            ===== NAV BAR =========
-            -->
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">ETE Palmares</a>           
-            </div>
-            <!-- end container -->
-        </nav>
-        <!-- END NAV BAR -->
+        <!-- ADICIONANDO A NAV BAR -->
+        <?php include './template/navbar.php'; ?>
+        
         <div class="container">
              <div class="row" >
                   <div class="col-md-9">

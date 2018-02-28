@@ -2,62 +2,14 @@
 <html>
     <head>
         <title>Projeto Integrador I</title>
-        <!-- meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- COR Barra Mobile -->
-        <!-- Chrome, Firefox OS, Opera and Vivaldi -->
-        <meta name="theme-color" content="##000080">
-        <!-- Windows Phone -->
-        <meta name="msapplication-navbutton-color" content="##000080">
-        <!-- iOS Safari -->
-        <meta name="apple-mobile-web-app-status-bar-style" content="##000080">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
-
-        <style>
-            #title-panel{
-               font-size: 21pt; 
-               color: #fff;
-            }
-            #title-panel-select{
-               font-size: 15pt; 
-               color: #fff;
-            }
-            a{
-               color: #000;
-            }
-            a:hover{
-               color: #483D8B;
-            }
-        </style>
-
+        <!-- ADICIONANDO HEADER PADRÃO -->
+        <?php include './template/header.php'; ?>
 
     </head>
     <body>
-        <!-- ======================
-            ===== NAV BAR =========
-            -->
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">ETE Palmares</a>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="./home.html">Home</a></li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Profile</a></li>
-                      <li><a href="#">Mensagens</a></li>
-                      <li><a href="#">Questões cadastradas</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Logout</a></li>
-                    </ul> 
-                  </li> 
-                </ul>         
-            </div>
-            <!-- end container -->
-        </nav>
-        <!-- END NAV BAR -->
+        <!-- ADICIONANDO A NAV BAR -->
+        <?php include './template/navbar.php'; ?>
+
         <div class="container">
              <div class="row" >
                   <div class="col-md-9">
@@ -66,29 +18,29 @@
                           <div class="panel-body">
                             
                             <ol class="breadcrumb">
-                                <li class="active"><a href="./home.html">Disciplinas</a></li>
+                                <li class="active"><a href="./home">Disciplinas</a></li>
                            </ol>
                            <!-- Parte a ser repetida no while -->
                             <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto.html">[Disciplina 1]</a></div>
+                                  <div class="panel-heading"><a href="./assunto">[Disciplina 1]</a></div>
                             </div>
                             <!-- END parte a ser repetida no while -->
 
                             <!-- Parte a ser repetida no while -->
                             <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto.html">[Disciplina 2]</a></div>
+                                  <div class="panel-heading"><a href="./assunto">[Disciplina 2]</a></div>
                             </div>
                             <!-- END parte a ser repetida no while -->
 
                             <!-- Parte a ser repetida no while -->
                             <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto.html">[Disciplina 3]</a></div>
+                                  <div class="panel-heading"><a href="./assunto">[Disciplina 3]</a></div>
                             </div>
                             <!-- END parte a ser repetida no while -->
 
                             <!-- Parte a ser repetida no while -->
                             <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto.html">[Disciplina 4]</a></div>
+                                  <div class="panel-heading"><a href="./assunto">[Disciplina 4]</a></div>
                             </div>
                             <!-- END parte a ser repetida no while -->
                        </div>
