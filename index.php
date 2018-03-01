@@ -20,22 +20,20 @@
          <div class="col-md-8  col-md-offset-2">
             <div class="jumbotron">
                <h1>Login</h1>
-               <form action="" method="">
-                  <div class="input-group">
-                     <!-- Email -->
-                     <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon2">
-                     <span class="input-group-addon" id="basic-addon2">@ete.edu.com.br</span>
-                  </div>
-                  <!-- end input email group -->
-                  <br/>
-                  <div class="input-group">
-                     <!-- Celular -->
-                     <span class="input-group-addon" id="sizing-addon2">Senha</span>
-                     <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon2">
+               <form action="./function/login" method="POST">
+                  <div class="form-group">
+
+                     <!-- USER NAME INPUT -->
+                     <label for="inputLabelMatricula">Matrícula</label>
+                     <input type="text" name="username" class="form-control" placeholder="Matrícula" aria-describedby="inputLoginUserName" required maxlength="11">
+
+                     <!-- PASSWORD INPUT -->
+                     <label for="inputLabelPassword">Password</label>
+                     <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="inputLoginPassword" required>
                   </div>
                   <!-- end input celular group -->
                   <br/>
-                  <a href="./home" class="button btn btn-primary" role="button" type="submit" >Enviar!</a>
+                  <input type="submit" name="Acessar" class="button btn btn-primary">
                </form>
                <!-- end formulário -->
             </div>
