@@ -8,7 +8,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nome_usuario']; ?><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">Profile</a>
+                                <a href="./profile">Profile</a>
                             </li>
                             <li>
                                 <a href="#">Mensagens</a>

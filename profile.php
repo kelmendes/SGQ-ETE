@@ -1,6 +1,11 @@
 <?php
     // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
     require './function/verificar_login.php';
+
+    // PEGANDO O ID DO USUARIO
+    $idUser = $_SESSION['id_usuario'];
+
+    // PEGAR OS DADOS DO USUARIO NO DB
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,70 +21,17 @@
 
         <div class="container">
              <div class="row" >
-                  <div class="col-md-9">
-                     <div class="panel panel-primary">
-                          <div class="panel-heading" id="title-panel">Disciplinas</div>
-                          <div class="panel-body">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>Editar perfil </h3>
+                        </div>
+                        <div class="panel-body">
                             
-                            <ol class="breadcrumb">
-                                <li class="active"><a href="./home">Disciplinas</a></li>
-                           </ol>
-                           <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 1]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
-
-                            <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 2]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
-
-                            <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 3]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
-
-                            <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 4]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
-                       </div>
-                     </div>
+                        </div>                        
+                    </div> <!-- PANEL EDIT PROFILE -->
                 </div>
-                <!-- end col-md-6 --> 
-
-                <div class="col-md-3">
-
-                  <div class="panel panel-primary">
-                    <div class="panel-heading" id="title-panel-select">Provas Anteriores</div>
-                    <div class="panel-body">
-                      Panel content
-                    </div>
-                    <div class="panel-footer option-select">
-                      <div class="btn-group btn-group-justified" role="group" aria-label="...">
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Clear All</button>
-                        </div>
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Delete</button>
-                        </div>
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Print</button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- end div col-ms-3  Questões selecionadas -->
+                <!-- end col-md-6 -->
             </div>
             <!-- end  row --> 
         </div>
