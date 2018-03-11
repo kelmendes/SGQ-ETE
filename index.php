@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Projeto Integrador I</title>
+      <title>Login</title>
         <!-- ADICIONANDO HEADER PADRÃO -->
         <?php include './template/header.php'; ?>
    </head>

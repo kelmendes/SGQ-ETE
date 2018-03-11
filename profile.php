@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home</title>
+        <title>Profile </title>
         <!-- ADICIONANDO HEADER PADRÃO -->
         <?php include './template/header.php'; ?>
 

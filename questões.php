@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Projeto Integrador I</title>
+        <title>Questões</title>
         <!-- ADICIONANDO HEADER PADRÃO -->
         <?php include './template/header.php'; ?>
     </head>
