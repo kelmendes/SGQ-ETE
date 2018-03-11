@@ -10,17 +10,21 @@
 		// VARIAVEL PARA SE MANTER A CONEXÃO COM O DB
 		var $conn;
 		
-		function __construct(argument)
+		function __construct()
 		{
 			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password);
 		}
 
 		// FUNCTION PARA LOGAR NO SISTEMA 
 		function login($user, $senha){
-			$star = $this->pdo->prepare('SELECT * FROM user WHERE user_matricula = :user AND  user_senha = :senha');
+			$star = $this->conn->prepare("SELECT * FROM user WHERE user_matricula = :user AND  user_senha = :senha");
 			// UTILIZANO MARCADORES PARA FAZER A INSERÇÃO DE VALOR NO QUERY 
-			$star->bindValue(":user", $user);
-			$star->bindValue(":senha", $senha);
+			$star->bindValue(":user", $user, PDO::PARAM_INT);
+			$star->bindValue(":senha", $senha, PDO::PARAM_STR);
+
+			$run = $star->execute();
+			$rs = $star->fetchAll(PDO::FETCH_ASSOC);
+			return $rs;
 		}
 	}
 

@@ -23,6 +23,25 @@
                <form action="./function/login" method="POST">
                   <div class="form-group">
 
+                     <!-- ALERTA CASO TENHA PROBLEMA NO LOGIN -->
+                        <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                        <?php
+                           session_start();
+                           if (isset($_SESSION['erro_msg'])) {
+                        ?>
+                           <div class="alert alert-danger" role="alert">
+                              <i class="glyphicon glyphicon-alert"></i>
+                              <?php 
+                                 // EXIBINDO MESSAGEM
+                                 echo $_SESSION['erro_msg']; 
+                                 // APAGANDO MESSAGEM DA SESSION
+                                 unset($_SESSION['erro_msg']);
+                              ?>
+                           </div>
+                        <?php } ?>
+                     <!-- END ALERTA CASO TENHA PROBLEMA NO LOGIN -->
+
+
                      <!-- USER NAME INPUT -->
                      <label for="inputLabelMatricula">Matrícula</label>
                      <input type="text" name="username" class="form-control" placeholder="Matrícula" aria-describedby="inputLoginUserName" required maxlength="11">
