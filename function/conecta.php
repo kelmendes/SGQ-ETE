@@ -23,7 +23,7 @@
 			$star->bindValue(":senha", md5($senha));
 
 			$run = $star->execute();
-			$rs = $star->fetchAll(PDO::FETCH_ASSOC);
+			$rs = $star->fetch(PDO::FETCH_ASSOC);
 			return $rs;
 		}
 	}
