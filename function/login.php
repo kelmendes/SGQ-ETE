@@ -28,7 +28,7 @@
 		//echo "Email: ".$resultado_valor['user_email'];
 
 		$_SESSION['id_usuario'] = $resultado_valor['user_matricula'];
-		$_SESSION['nome_usuario'] = $resultado_valor['user_nome']
+		$_SESSION['nome_usuario'] = $resultado_valor['user_nome'];
 		header('Location: ../home');
 	}else{
 		// MENAGEM QUE FICARA NO ALERTA
