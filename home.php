@@ -1,3 +1,7 @@
+<?php
+    // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
+    require './function/verificar_login.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>

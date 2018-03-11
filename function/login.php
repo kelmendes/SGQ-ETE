@@ -22,10 +22,14 @@
 	$resultado_valor = $conn->login($username, $password);
 
 	if ($resultado_valor){
-		echo "USUARIO LOGADO!!</br>";
-		echo "Nome: ".$resultado_valor['user_nome'] . "</br>";
-		echo "Matricula: ".$resultado_valor['user_matricula'] . "</br>";
-		echo "Email: ".$resultado_valor['user_email'];
+		//echo "USUARIO LOGADO!!</br>";
+		//echo "Nome: ".$resultado_valor['user_nome'] . "</br>";
+		//echo "Matricula: ".$resultado_valor['user_matricula'] . "</br>";
+		//echo "Email: ".$resultado_valor['user_email'];
+
+		$_SESSION['id_usuario'] = $resultado_valor['user_matricula'];
+		$_SESSION['nome_usuario'] = $resultado_valor['user_nome']
+		header('Location: ../home');
 	}else{
 		// MENAGEM QUE FICARA NO ALERTA
 		$_SESSION['erro_msg'] = "<b>Nome de usuário</b> ou <b>senha</b> errados. Por favor tente outra vez.";
