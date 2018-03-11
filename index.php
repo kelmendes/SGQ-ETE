@@ -48,7 +48,7 @@
 
                      <!-- PASSWORD INPUT -->
                      <label for="inputLabelPassword">Password</label>
-                     <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="inputLoginPassword" required>
+                     <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="inputLoginPassword" required maxlength="25">
                   </div>
                   <!-- end input celular group -->
                   <br/>
