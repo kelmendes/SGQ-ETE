@@ -20,7 +20,7 @@
 			$star = $this->conn->prepare("SELECT * FROM user WHERE user_matricula = :user AND  user_senha = :senha");
 			// UTILIZANO MARCADORES PARA FAZER A INSERÇÃO DE VALOR NO QUERY 
 			$star->bindValue(":user", $user, PDO::PARAM_INT);
-			$star->bindValue(":senha", $senha, PDO::PARAM_STR);
+			$star->bindValue(":senha", md5($senha));
 
 			$run = $star->execute();
 			$rs = $star->fetchAll(PDO::FETCH_ASSOC);
