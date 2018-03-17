@@ -3,7 +3,7 @@
 	session_start();
 
 	// ADICIONANDO A CLASSE QUE IRA VALIDAR OS USUARIOS 
-	include './conecta.php';
+	include '../class/conecta.php';
 
 	// ESTANCIANDO A CLASSE 
 	$conn = new Conecta();
