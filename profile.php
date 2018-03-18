@@ -39,16 +39,33 @@
                             <h3>Dados da conta </h3>
                         </div>
                         <div class="panel-body">
+
+                            <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA -->
+                                <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                                <?php
+                                   if (isset($_SESSION['erro_msg_DADOS_CONTA'])) {
+                                ?>
+                                   <div class="alert alert-danger" role="alert">
+                                      <i class="glyphicon glyphicon-alert"></i>
+                                      <?php 
+                                         // EXIBINDO MESSAGEM
+                                         echo $_SESSION['erro_msg_DADOS_CONTA']; 
+                                         // APAGANDO MESSAGEM DA SESSION
+                                         unset($_SESSION['erro_msg_DADOS_CONTA']);
+                                      ?>
+                                   </div>
+                                <?php } ?>
+                             <!-- END ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA  -->
                         
                             <form action="./function/profile_dados_conta" method="POST">
                                 <div class="form-group">
-                                    <label for="idUserProfile">Identificação</label>
-                                    <input type="text" name="user_id" class="form-control" id="idUserProfile" value="<?php echo($resultado_valor['user_id']); ?>" readonly required>
+                                    <!-- <label for="idUserProfile">Identificação</label> -->
+                                    <input type="hidden" name="user_id" class="form-control" id="idUserProfile" value="<?php echo($resultado_valor['user_id']); ?>" readonly required hidden>
                                 </div><!-- END FORM-GROUP ID USER -->
 
                                 <div class="form-group">
                                     <label for="matriculaUserProfile">Matrícula</label>
-                                    <input type="text" name="user_matricula" class="form-control" id="matriculaUserProfile" value="<?php echo($resultado_valor['user_matricula']); ?>" required maxlength="11">
+                                    <input type="text" name="user_matricula" class="form-control" id="matriculaUserProfile" value="<?php echo($resultado_valor['user_matricula']); ?>" required readonly maxlength="11">
                                 </div><!-- END FORM-GROUP MATRICULA USER -->
 
                                 <div class="form-group">
@@ -79,14 +96,26 @@
                         <div class="panel-heading">
                             <h3>Password </h3>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body">    
+
+                            <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE SENHA -->
+                                <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                                <?php
+                                   if (isset($_SESSION['erro_msg_PASSWORD'])) {
+                                ?>
+                                   <div class="alert alert-danger" role="alert">
+                                      <i class="glyphicon glyphicon-alert"></i>
+                                      <?php 
+                                         // EXIBINDO MESSAGEM
+                                         echo $_SESSION['erro_msg_PASSWORD']; 
+                                         // APAGANDO MESSAGEM DA SESSION
+                                         unset($_SESSION['erro_msg_PASSWORD']);
+                                      ?>
+                                   </div>
+                                <?php } ?>
+                             <!-- END ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE SENHA  -->
                         
                             <form>
-
-                                <div class="form-group">
-                                    <label for="passwordUserProfile">Old Password</label>
-                                    <input type="password" name="user_senha_old" class="form-control" id="passwordUserProfile" placeholder="Old Password" maxlength="20" required>
-                                </div><!-- END FORM-GROUP PASSWORD USER -->
 
                                 <div class="form-group">
                                     <label for="passwordUserProfile">New Password</label>

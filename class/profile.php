@@ -27,10 +27,9 @@
 
 		
 		// FUNCTION PARA CADASTRAR NOVO USUARIO 
-		function updateProfile($user_id, $user_matricula, $user_nome, $user_email){
+		function updateProfile($user_id, $user_nome, $user_email){
 			$star = $this->conn->prepare("
 				UPDATE `user` SET 
-					`user_matricula`= :user_matricula,
 					`user_nome`= :user_nome,
 					`user_email`= :user_email,
 					`user_update_at`= CURRENT_TIMESTAMP() 
@@ -40,7 +39,6 @@
 				");
 			// UTILIZANO MARCADORES PARA FAZER A INSERÇÃO DE VALOR NO QUERY 
 			$star->bindValue(":user_id", $user_id);
-			$star->bindValue(":user_matricula", $user_matricula);
 			$star->bindValue(":user_nome", $user_nome);
 			$star->bindValue(":user_email", $user_email);
 
