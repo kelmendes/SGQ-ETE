@@ -70,12 +70,12 @@
 
                                 <div class="form-group">
                                     <label for="nomeUserProfile">Nome</label>
-                                    <input type="text" name="user_nome" class="form-control" id="nomeUserProfile" value="<?php echo($resultado_valor['user_nome']); ?>" required maxlength="100">
+                                    <input type="text" name="user_nome" class="form-control" id="nomeUserProfile" value="<?php echo($resultado_valor['user_nome']); ?>" required maxlength="60">
                                 </div><!-- END FORM-GROUP NOME USER -->
 
                                 <div class="form-group">
                                     <label for="emailUserProfile">Email</label>
-                                    <input type="email" name="user_email" class="form-control" id="emailUserProfile" value="<?php echo($resultado_valor['user_email']); ?>" required maxlength="150">
+                                    <input type="email" name="user_email" class="form-control" id="emailUserProfile" value="<?php echo($resultado_valor['user_email']); ?>" required maxlength="100">
                                 </div><!-- END FORM-GROUP EMAIL USER -->
                                 
                                 <button type="submit" class="btn btn-default">Submit</button>
@@ -115,7 +115,12 @@
                                 <?php } ?>
                              <!-- END ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE SENHA  -->
                         
-                            <form>
+                            <form action="./function/profile_password" method="POST">
+
+                                <div class="form-group">
+                                    <!-- <label for="idUserProfile">Identificação</label> -->
+                                    <input type="hidden" name="user_id" class="form-control" id="idUserProfile" value="<?php echo($resultado_valor['user_id']); ?>" readonly required hidden>
+                                </div><!-- END FORM-GROUP ID USER -->
 
                                 <div class="form-group">
                                     <label for="passwordUserProfile">New Password</label>

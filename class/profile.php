@@ -46,18 +46,23 @@
 			return $run;
 		}
 
-		/*
+		
 		// FUNCTION PARA APAGAR USUARIO 
-		function dropUser($idUser){
-			$star = $this->conn->prepare("DELETE * FROM user WHERE user_id = :idUser");
-			$star->bindValue(":idUser", $idUser, PDO::PARAM_INT);
+		function updatePassword($user_id, $user_senha){
+			$star = $this->conn->prepare("
+				UPDATE `user` SET 
+					`user_senha`= :user_senha,
+					`user_update_at`= CURRENT_TIMESTAMP() 
+				WHERE
+					`user_id`= :user_id");
+			$star->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+			$star->bindValue(":user_senha", md5($user_senha));
 
 			$run = $star->execute();
 			return $run;
-			// TESTAR O VALOR RETORNA FUTURAMENTE PARA VERIFICAR A POSSIBILIDADE DE EXIBIR MENSAGEM VIA SESSION
+			
 		}
-		*/
-
+		
 	}
 
 

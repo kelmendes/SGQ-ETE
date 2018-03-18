@@ -14,13 +14,10 @@
 	if($user_id != null and $user_nome != null and $user_email != null){
 
 		// VERIFICANDO TAMANHO DOS CAMPOS
-		if (strlen($user_nome)){
-
+		if (strlen($user_nome)>60 or strlen($user_email)>100){
+			$_SESSION['erro_msg_DADOS_CONTA'] = "Verifique os dados informados, pois ultrapassa o limite aceito pelo sistema!";
+			header('Location: ../profile');
 		}
-
-
-
-
 
 		// ESTANCIANDO A CLASS DE PROFILE 
 		$prof = new Profile();
