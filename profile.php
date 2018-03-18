@@ -31,15 +31,16 @@
 
         <div class="container">
              <div class="row" >
-                <div class="col-md-8 col-md-offset-2">
+                <!-- PARTE DE DADOS DA CONTA -->
+                <div class="col-md-7 ">
                     
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3>Editar perfil </h3>
+                            <h3>Dados da conta </h3>
                         </div>
                         <div class="panel-body">
                         
-                            <form>
+                            <form action="./function/profile_dados_conta" method="POST">
                                 <div class="form-group">
                                     <label for="idUserProfile">Identificação</label>
                                     <input type="text" name="user_id" class="form-control" id="idUserProfile" value="<?php echo($resultado_valor['user_id']); ?>" readonly required>
@@ -59,11 +60,6 @@
                                     <label for="emailUserProfile">Email</label>
                                     <input type="email" name="user_email" class="form-control" id="emailUserProfile" value="<?php echo($resultado_valor['user_email']); ?>" required maxlength="150">
                                 </div><!-- END FORM-GROUP EMAIL USER -->
-
-                                <div class="form-group">
-                                    <label for="passwordUserProfile">Password</label>
-                                    <input type="password" name="user_senha" class="form-control" id="passwordUserProfile" placeholder="Password" maxlength="20">
-                                </div><!-- END FORM-GROUP PASSWORD USER -->
                                 
                                 <button type="submit" class="btn btn-default">Submit</button>
                                 <button type="reset" class="btn btn-default">Reset</button>
@@ -74,6 +70,45 @@
                     </div> <!-- PANEL EDIT PROFILE -->
                 </div>
                 <!-- end col-md-6 -->
+                <!-- END PARTE DE DADOS DA CONTA -->
+
+                <!-- PARTE DE CADASTRO DE NOVA SENHA -->
+                <div class="col-md-5 ">
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3>Password </h3>
+                        </div>
+                        <div class="panel-body">
+                        
+                            <form>
+
+                                <div class="form-group">
+                                    <label for="passwordUserProfile">Old Password</label>
+                                    <input type="password" name="user_senha_old" class="form-control" id="passwordUserProfile" placeholder="Old Password" maxlength="20" required>
+                                </div><!-- END FORM-GROUP PASSWORD USER -->
+
+                                <div class="form-group">
+                                    <label for="passwordUserProfile">New Password</label>
+                                    <input type="password" name="user_senha_new" class="form-control" id="passwordUserProfile" placeholder="New Password" maxlength="20" required>
+                                </div><!-- END FORM-GROUP PASSWORD USER -->
+
+                                <div class="form-group">
+                                    <label for="passwordUserProfile">Confirm Password</label>
+                                    <input type="password" name="user_senha_confirm" class="form-control" id="passwordUserProfile" placeholder="Confirm Password" maxlength="20" required>
+                                </div><!-- END FORM-GROUP PASSWORD USER -->
+                                
+                                <button type="submit" class="btn btn-default">Submit</button>
+                                <button type="reset" class="btn btn-default">Reset</button>
+
+                            </form><!-- END FORMULARIO DE DADOS PROFILE -->
+
+                        </div>                        
+                    </div> <!-- PANEL EDIT PROFILE -->
+                </div>
+                <!-- END PARTE DE CADASTRO DE NOVA SENHA -->
+
+
             </div>
             <!-- end  row --> 
         </div>

@@ -27,19 +27,25 @@
 
 		
 		// FUNCTION PARA CADASTRAR NOVO USUARIO 
-		function newUser($user_matricula, $user_nome, $user_email, $user_senha, $user_role){
+		function updateProfile($user_id, $user_matricula, $user_nome, $user_email){
 			$star = $this->conn->prepare("
-				INSERT INTO `user`(`user_matricula`, `user_nome`, `user_email`, `user_senha`, `user_role`, `user_create_at`) VALUES ( :user_matricula , :user_nome , :user_email, :user_senha, :user_role) ");
+				UPDATE `user` SET 
+					`user_matricula`= :user_matricula,
+					`user_nome`= :user_nome,
+					`user_email`= :user_email,
+					`user_update_at`= CURRENT_TIMESTAMP() 
+				WHERE
+					`user_id`= :user_id
+
+				");
 			// UTILIZANO MARCADORES PARA FAZER A INSERÇÃO DE VALOR NO QUERY 
-			$star->bindValue(":user_matricula", $user_matricula, PDO::PARAM_INT);
-			$star->bindValue(":user_nome", $user_nome, PDO::PARAM_STR);
-			$star->bindValue(":user_email", $user_email, PDO::PARAM_STR);
-			$star->bindValue(":user_senha", md5($user_senha));
-			$star->bindValue(":user_role", $user_role, PDO::PARAM_INT);
+			$star->bindValue(":user_id", $user_id);
+			$star->bindValue(":user_matricula", $user_matricula);
+			$star->bindValue(":user_nome", $user_nome);
+			$star->bindValue(":user_email", $user_email);
 
 			$run = $star->execute();
-			$rs = $star->fetch(PDO::FETCH_ASSOC);
-			return $rs;
+			return $run;
 		}
 
 		/*
