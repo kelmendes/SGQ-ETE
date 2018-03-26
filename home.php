@@ -1,6 +1,16 @@
 <?php
     // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
     require './function/verificar_login.php';
+
+    // ADICIONANDO CLASS RESPONSAVEL POR LISTAR DISCIPLINAS 
+    include './class/disciplina.php';
+
+    // ESTANCIANDO A CLASS 
+    $disciplina = new Disciplina();
+
+    // PEGANDO RESULTADO DA CONSULTA 
+    $resultado_disciplana = $disciplina->listDisciplinas();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,29 +34,26 @@
                             <ol class="breadcrumb">
                                 <li class="active"><a href="./home">Disciplinas</a></li>
                            </ol>
-                           <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 1]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
+                           <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA PARA PODER PERCORRER O ARRAY -->
+                           <?php if ($resultado_disciplana) { ?>
 
-                            <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 2]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
+                                <?php  while($rows_disciplinas = $resultado_disciplana->fetch(PDO::FETCH_ASSOC)) {?>
+                                    <!-- Parte a ser repetida no while -->
+                                    <ul class="list-group">
+                                        <a href="./assunto?disciplina=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="list-group-item">
+                                            <span class="badge">
+                                                <!-- EXIBIR QUANTIDADE DE ASSUNTOS CADASTRADOS -->
+                                                <?php echo $rows_disciplinas['disciplina_id']; ?>
+                                            </span>
+                                            <?php echo $rows_disciplinas['disciplina_nome']; ?>
+                                        </a>
+                                    </ul>
 
-                            <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 3]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
+                                    <!-- END parte a ser repetida no while -->
+                                <?php } ?>
 
-                            <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                  <div class="panel-heading"><a href="./assunto">[Disciplina 4]</a></div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
+                           <?php } ?>
+
                        </div>
                      </div>
                 </div>

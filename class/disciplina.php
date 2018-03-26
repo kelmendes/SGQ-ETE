@@ -20,8 +20,7 @@
 			$star = $this->conn->prepare("SELECT * FROM disciplina ORDER BY disciplina_nome");
 
 			$run = $star->execute();
-			$rs = $star->fetch(PDO::FETCH_ASSOC);
-			return $rs;
+			return $star;
 		}
 
 
