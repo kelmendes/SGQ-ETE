@@ -21,7 +21,7 @@
                           <div class="panel-heading" id="title-panel">Assunto - Disciplina</div>
                           <div class="panel-body">
                              <ol class="breadcrumb">
-                              <li><a href="./home.html">Disciplinas</a></li>
+                              <li><a href="./home">Disciplinas</a></li>
                               <li class="active" ><a href="#">Assunto</a></li>
                              </ol>
                              <!-- Parte a ser repetida no while -->
