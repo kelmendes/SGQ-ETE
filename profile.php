@@ -34,9 +34,9 @@
                 <!-- PARTE DE DADOS DA CONTA -->
                 <div class="col-md-7 ">
                     
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3>Dados da conta </h3>
+                            <h4>Dados da conta </h4>
                         </div>
                         <div class="panel-body">
 
@@ -78,8 +78,8 @@
                                     <input type="email" name="user_email" class="form-control" id="emailUserProfile" value="<?php echo($resultado_valor['user_email']); ?>" required maxlength="100">
                                 </div><!-- END FORM-GROUP EMAIL USER -->
                                 
-                                <button type="submit" class="btn btn-default">Submit</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
 
                             </form><!-- END FORMULARIO DE DADOS PROFILE -->
 
@@ -92,9 +92,9 @@
                 <!-- PARTE DE CADASTRO DE NOVA SENHA -->
                 <div class="col-md-5 ">
                     
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3>Password </h3>
+                            <h4>Password </h4>
                         </div>
                         <div class="panel-body">    
 
@@ -132,8 +132,8 @@
                                     <input type="password" name="user_senha_confirm" class="form-control" id="passwordUserProfile" placeholder="Confirm Password" maxlength="20" required>
                                 </div><!-- END FORM-GROUP PASSWORD USER -->
                                 
-                                <button type="submit" class="btn btn-default">Submit</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="reset" class="btn btn-danger">Limpar</button>
 
                             </form><!-- END FORMULARIO DE DADOS PROFILE -->
 
