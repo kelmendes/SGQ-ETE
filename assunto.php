@@ -1,11 +1,26 @@
 <?php
     // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
     require './function/verificar_login.php';
+
+    // PEGANDO ID DA DISCIPLINA QUE SERA LISTADO OS ASSUNTO 
+    $disciplina_id = (isset($_GET['disciplina']))? $_GET['disciplina'] : null;
+
+    // ADICIONANDO CLASS DE ASSUNTO 
+    include './class/assunto.php';
+
+    // ESTANCIANDO A CLASS DE ASSUNTO 
+    $assunto = new Assunto();
+
+    // PEGANDO DADOS DA DISCIPLINA PARA EXIBIR NA PAGINA 
+    $resultado_disciplina = $assunto->getInfoDisciplina($disciplina_id);
+
+    //FAZENDO CONSULTA PELA CLASS 
+    $resultado_assuntos = $assunto->listAssuntos($disciplina_id);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Assunto</title>
+        <title>Assunto - <?php echo $resultado_disciplina['disciplina_nome_abreviacao']; ?></title>
         <!-- ADICIONANDO HEADER PADRÃO -->
         <?php include './template/header.php'; ?>
     </head>
@@ -17,31 +32,48 @@
         <div class="container">
              <div class="row" >
                   <div class="col-md-9">
-                     <div class="panel  panel-primary">
-                          <div class="panel-heading" id="title-panel">Assunto - Disciplina</div>
-                          <div class="panel-body">
-                             <ol class="breadcrumb">
-                              <li><a href="./home">Disciplinas</a></li>
-                              <li class="active" ><a href="#">Assunto</a></li>
-                             </ol>
-                             <!-- Parte a ser repetida no while -->
-                             <div class="panel panel-default" >
-                                   <div class="panel-heading"><a href="./questões">[Assunto 1]</a></div>
-                             </div>
-                             <!-- END parte a ser repetida no while -->
+                        <div class="panel  panel-primary">
+                            <div class="panel-heading" id="title-panel">
+                                <?php echo $resultado_disciplina['disciplina_nome']; ?>
+                            </div>
+                            <div class="panel-body">
+                                <ol class="breadcrumb">
+                                    <li>
+                                        <a href="./home">
+                                            Disciplinas
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./assunto?disciplina=<?php echo $disciplina_id ?>">
+                                            <?php echo $resultado_disciplina['disciplina_nome_abreviacao']; ?>
+                                        </a>
+                                    </li>
+                                    <li class="active" >
+                                        <a href="./assunto?disciplina=<?php echo $disciplina_id ?>">
+                                            Assunto
+                                        </a>
+                                    </li>
+                                </ol>
 
-                             <!-- Parte a ser repetida no while -->
-                             <div class="panel panel-default" >
-                                   <div class="panel-heading"><a href="./questões">[Assunto 2]</a></div>
-                             </div>
-                             <!-- END parte a ser repetida no while -->
+                                <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA -->
+                                <?php if ($resultado_assuntos) { ?>
 
-                             <!-- Parte a ser repetida no while -->
-                             <div class="panel panel-default" >
-                                   <div class="panel-heading"><a href="./questões">[Assunto 3]</a></div>
-                             </div>
-                             <!-- END parte a ser repetida no while -->
-                       </div>
+                                    <?php  while($rows_assuntos = $resultado_assuntos->fetch(PDO::FETCH_ASSOC)) {?>
+                                     <!-- Parte a ser repetida no while -->
+                                     <ul class="list-group">
+                                            <a href="./questões?assunto=<?php echo $rows_assuntos['disciplina_assunto_id']; ?>" class="list-group-item">
+                                                <span class="badge">
+                                                    <!-- EXIBIR QUANTIDADE DE ASSUNTOS CADASTRADOS -->
+                                                    <?php echo $rows_assuntos['assunto_total_questoes']; ?>
+                                                </span>
+                                                <?php echo $rows_assuntos['disciplina_assunto_nome']; ?>
+                                            </a>
+                                        </ul>
+                                     <!-- END parte a ser repetida no while -->
+                                    <?php } ?>
+                                <?php } ?>
+
+                            </div>
                      </div>
                 </div>
                 <!-- end col-md-6 --> 
