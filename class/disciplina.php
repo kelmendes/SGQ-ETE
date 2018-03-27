@@ -17,7 +17,17 @@
 
 		// FUNCTION PARA LISTAR OS USUARIOS 
 		function listDisciplinas(){
-			$star = $this->conn->prepare("SELECT * FROM disciplina ORDER BY disciplina_nome");
+			$star = $this->conn->prepare("
+				SELECT
+				    A.disciplina_id,
+				    A.disciplina_codigo,
+				    A.disciplina_nome,
+				    (SELECT COUNT(*) 
+				     FROM disciplina_assunto
+				     WHERE disciplina_assunto_id_disciplina = A.disciplina_id ) AS disciplina_total_assunto
+				FROM
+				    disciplina AS A
+			    ORDER BY disciplina_nome");
 
 			$run = $star->execute();
 			return $star;

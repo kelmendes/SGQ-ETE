@@ -43,7 +43,7 @@
                                         <a href="./assunto?disciplina=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="list-group-item">
                                             <span class="badge">
                                                 <!-- EXIBIR QUANTIDADE DE ASSUNTOS CADASTRADOS -->
-                                                <?php echo $rows_disciplinas['disciplina_id']; ?>
+                                                <?php echo $rows_disciplinas['disciplina_total_assunto']; ?>
                                             </span>
                                             <?php echo $rows_disciplinas['disciplina_nome']; ?>
                                         </a>
