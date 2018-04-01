@@ -20,8 +20,7 @@
 			$star = $this->conn->prepare("SELECT * FROM user");
 
 			$run = $star->execute();
-			$rs = $star->fetch(PDO::FETCH_ASSOC);
-			return $rs;
+			return $star;
 		}
 
 		// FUNCTION PARA CADASTRAR NOVO USUARIO 
@@ -31,7 +30,7 @@
 			// UTILIZANO MARCADORES PARA FAZER A INSERÇÃO DE VALOR NO QUERY 
 			$star->bindValue(":user_matricula", $user_matricula, PDO::PARAM_INT);
 			$star->bindValue(":user_nome", $user_nome, PDO::PARAM_STR);
-			$star->bindValue(":user_email", $, PDO::PARAM_STR);
+			$star->bindValue(":user_email", $user_email, PDO::PARAM_STR);
 			$star->bindValue(":user_senha", md5($user_senha));
 			$star->bindValue(":user_role", $user_role, PDO::PARAM_INT);
 

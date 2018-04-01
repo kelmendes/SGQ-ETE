@@ -3,13 +3,13 @@
     require './function/verificar_login.php';
 
     // ADICIONANDO CLASS RESPONSAVEL POR LISTAR DISCIPLINAS 
-    include './class/disciplina.php';
+    include './class/usuario.php';
 
     // ESTANCIANDO A CLASS 
-    $disciplina = new Disciplina();
+    $usuarios = new Usuario();
 
     // PEGANDO RESULTADO DA CONSULTA 
-    $resultado_disciplana = $disciplina->listDisciplinas();
+    $resultado_usuarios = $usuarios->listUser();
 
 ?>
 <!DOCTYPE html>
@@ -51,18 +51,35 @@
                                     <th></th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>##</td>
-                                        <td>########</td>
-                                        <td>#################</td>
-                                        <td>######</td>
-                                        <td>########</td>
-                                        <td>########</td>
-                                        <td>
-                                            <a href="#" class="btn btn-primary btn-xs">Editar</a>
-                                            <a href="#" class="btn btn-danger btn-xs">Deletar</a>
-                                        </td>
-                                    </tr>
+                                    <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA PARA PODER PERCORRER O ARRAY -->
+                                    <?php if ($resultado_usuarios) { ?>
+
+                                        <?php  while($rows_usuarios = $resultado_usuarios->fetch(PDO::FETCH_ASSOC)) {?>
+                                            <!-- Parte a ser repetida no while -->
+                                            <tr>
+                                                <td><?php echo ($rows_usuarios['user_id']); ?></td>
+                                                <td><?php echo ($rows_usuarios['user_matricula']); ?></td>
+                                                <td><?php echo ($rows_usuarios['user_nome']); ?></td>
+                                                <td>
+                                                    <?php 
+                                                        if ($rows_usuarios['user_role'] = 1 ){
+                                                            echo "Padrão";
+                                                        }elseif($rows_usuarios['user_role'] = 2){
+                                                            echo "Administrador";
+                                                        }else{
+                                                            echo "Não foi possível definir.";
+                                                        } 
+                                                    ?>      
+                                                </td>
+                                                <td><?php echo ($rows_usuarios['user_create_at']); ?></td>
+                                                <td><?php echo ($rows_usuarios['user_update_at']); ?></td>
+                                                <td>
+                                                    <a href="#" class="btn btn-primary btn-xs">Editar</a>
+                                                    <a href="#" class="btn btn-danger btn-xs">Deletar</a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                             
