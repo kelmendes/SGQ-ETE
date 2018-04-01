@@ -12,7 +12,7 @@
 		
 		function __construct()
 		{
-			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password);
+			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 		}
 
 		// FUNCTION PARA PEGAR INFORMACOES QUE SAO EXIBIDAS NA PAGINA  
@@ -33,12 +33,28 @@
 					A.disciplina_id = S.disciplina_assunto_id_disciplina
 				WHERE
 					S.disciplina_assunto_id = :disciplina_assunto_id
-				");
+			");
 
 			$star->bindValue(":disciplina_assunto_id", $disciplina_assunto_id, PDO::PARAM_INT);
 			$run = $star->execute();
 			$rs = $star->fetch(PDO::FETCH_ASSOC);
 			return $rs;
+		}
+
+
+		function getQuestoes($disciplina_assunto_id){
+			$star = $this->conn->prepare("
+				SELECT 
+					*
+				FROM 
+					disciplina_assunto_questao
+				WHERE
+					disciplina_assunto_questao_id_assunto = :disciplina_assunto_id
+				");	
+			$star->bindValue(":disciplina_assunto_id", $disciplina_assunto_id, PDO::PARAM_INT);
+			$run = $star->execute();
+			return $star;
+
 		}
 	}
 

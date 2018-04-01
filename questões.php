@@ -14,6 +14,10 @@
 
     // PEGANDO DADOS DA DISCIPLINA PARA EXIBIR NA PAGINA 
     $resultado_assunto = $questões->getInfoAssunto($assunto_id);
+
+
+    // FAZENDO CONSULTA DAS QUESTOES 
+    $resultado_questões = $questões->getQuestoes($assunto_id);
 ?>
 <!DOCTYPE html>
 <html>
@@ -63,15 +67,20 @@
                                     <th>ATUALIZADO EM</th>
                                 </thead>
                                 <tbody>
-                                    <!-- Parte a ser repetida no while -->
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <!-- END parte a ser repetida no while -->
+                                    <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA PARA PODER PERCORRER O ARRAY -->
+                                    <?php if ($resultado_questões) { ?>
+                                        <?php  while($rows_questões = $resultado_questões->fetch(PDO::FETCH_ASSOC)) {?>
+                                            <!-- Parte a ser repetida no while -->
+                                            <tr>
+                                                <td><?php echo ($rows_questões['disciplina_assunto_questao_id']); ?></td>
+                                                <td><?php echo ($rows_questões['disciplina_assunto_questao_nome']); ?></td>
+                                                <td><?php echo ($rows_questões['disciplina_assunto_questao_pergunta']); ?></td>
+                                                <td><?php echo ($rows_questões['disciplina_assunto_questao_creat_at']); ?></td>
+                                                <td><?php echo ($rows_questões['disciplina_assunto_questao_update_at']); ?></td>
+                                            </tr>
+                                            <!-- END parte a ser repetida no while -->
+                                        <?php } ?>
+                                    <?php } ?>
                                 </tbody>
                                 
                             </table>
