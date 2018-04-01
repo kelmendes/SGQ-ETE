@@ -12,7 +12,7 @@
 		
 		function __construct()
 		{
-			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password);
+			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 		}
 
 		// FUNCTION PARA LISTAR OS USUARIOS 
