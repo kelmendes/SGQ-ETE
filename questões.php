@@ -32,7 +32,9 @@
                 <div class="col-md-9">
                     <div class="panel  panel-default">
                         <div class="panel-heading" id="title-panel">
-                            Questões - <?php echo $resultado_assunto['disciplina_assunto_nome']; ?>      
+                            <?php echo ucwords(strtolower($resultado_assunto['disciplina_nome'])); ?> 
+                            - 
+                            <?php echo $resultado_assunto['disciplina_assunto_nome']; ?>      
                         </div>
                         <div class="panel-body">
                             <ol class="breadcrumb">

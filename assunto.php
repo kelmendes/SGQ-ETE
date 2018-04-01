@@ -34,7 +34,9 @@
                   <div class="col-md-9">
                         <div class="panel  panel-default">
                             <div class="panel-heading" id="title-panel">
-                                <?php echo $resultado_disciplina['disciplina_nome']; ?>
+                                <?php echo ucwords(strtolower($resultado_disciplina['disciplina_nome'])); ?>
+                                -
+                                Assuntos
                             </div>
                             <div class="panel-body" >
                                 <ol class="breadcrumb" >
@@ -60,7 +62,7 @@
                                                     Questões: 
                                                     <?php echo $rows_assuntos['assunto_total_questoes']; ?>
                                                 </span>
-                                                <?php echo $rows_assuntos['disciplina_assunto_nome']; ?>
+                                                <?php echo ucwords(strtolower($rows_assuntos['disciplina_assunto_nome'])); ?>
                                             </a>
                                         </ul>
                                      <!-- END parte a ser repetida no while -->

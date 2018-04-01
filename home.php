@@ -48,7 +48,7 @@
                                                 Assuntos: 
                                                 <?php echo $rows_disciplinas['disciplina_total_assunto']; ?>
                                             </span>
-                                            <?php echo $rows_disciplinas['disciplina_nome']; ?>
+                                            <?php echo ucwords(strtolower($rows_disciplinas['disciplina_nome'])); ?>
                                         </a>
                                     </ul>
 

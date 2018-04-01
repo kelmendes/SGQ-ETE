@@ -23,7 +23,8 @@
 				    S.disciplina_assunto_id_disciplina,
 				    S.disciplina_assunto_id,
 				    A.disciplina_nome_abreviacao,
-				    A.disciplina_id
+				    A.disciplina_id,
+				    A.disciplina_nome
 				FROM
 				    disciplina_assunto AS S 
 				INNER JOIN 
