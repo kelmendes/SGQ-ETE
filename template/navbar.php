@@ -1,6 +1,6 @@
         <!-- ======= NAV BAR =========-->
         <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="#">ETE Palmares</a>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./home">Home</a></li>

@@ -16,12 +16,15 @@
 		if (strlen($user_senha_new) > 20 or strlen($user_senha_confirm) > 20){
 			$_SESSION['erro_msg_PASSWORD'] = "Sua senha ultrapassa o limite aceito pelo sistema!";
 			header('Location: ../profile');
+			exit;
 		}
 
 		// VERIFICANDO SE AS SENHAS SÃO IGUAIS
-		if ($user_senha_new!=  $user_senha_confirm){
+		if ($user_senha_new !=  $user_senha_confirm){
 			$_SESSION['erro_msg_PASSWORD'] = "As senhas informadas não são iguais!";
 			header('Location: ../profile');
+			exit;
+			
 		}
 
 		// ESTANCIANDO A CLASS

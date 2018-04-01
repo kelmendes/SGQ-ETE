@@ -24,7 +24,7 @@
         <!-- ADICIONANDO A NAV BAR -->
         <?php include './template/navbar.php'; ?>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row" >
                 <div class="col-md-9">
                     <div class="panel panel-default">
@@ -48,6 +48,13 @@
                                                 Assuntos: 
                                                 <?php echo $rows_disciplinas['disciplina_total_assunto']; ?>
                                             </span>
+                                            <span class="badge">
+                                                Editar
+                                            </span>
+                                            <span class="badge">
+                                                Excluir
+                                            </span>
+
                                             <?php echo ucwords(strtolower($rows_disciplinas['disciplina_nome'])); ?>
                                         </a>
                                     </ul>

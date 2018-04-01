@@ -29,7 +29,7 @@
         <!-- ADICIONANDO A NAV BAR -->
         <?php include './template/navbar.php'; ?>
 
-        <div class="container">
+        <div class="container-fluid">
              <div class="row" >
                 <!-- PARTE DE DADOS DA CONTA -->
                 <div class="col-md-7 ">
