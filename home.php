@@ -62,7 +62,7 @@
                                     <!-- END parte a ser repetida no while -->
                                 <?php } ?>
 
-                               <?php } ?>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
