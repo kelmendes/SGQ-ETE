@@ -55,7 +55,7 @@
                                                 Excluir
                                             </span>
 
-                                            <?php echo ucwords(strtolower($rows_disciplinas['disciplina_nome'])); ?>
+                                            <?php echo "<b>" . ucwords(strtolower($rows_disciplinas['disciplina_nome'])) . "</b>"; ?>
                                         </a>
                                     </ul>
 
