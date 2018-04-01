@@ -13,21 +13,23 @@
         <style>
             #title-panel{
                font-size: 21pt; 
-               color:   #808080;
+               color:   #696969;
                font-weight: bold;
             }
             #title-panel-select{
                font-size: 15pt; 
-               color: #fff;
+               color: #696969;
                font-weight: bold;
             }
-            
             .option-select ul li{
               list-style-type: none;
               float: left;
             }
             body {
               background-color: #F0FFF0;
+            }
+            .breadcrumb {
+              background-color:  #E0EEE0;
             }
         </style>
 

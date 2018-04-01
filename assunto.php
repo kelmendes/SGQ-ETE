@@ -36,8 +36,8 @@
                             <div class="panel-heading" id="title-panel">
                                 <?php echo $resultado_disciplina['disciplina_nome']; ?>
                             </div>
-                            <div class="panel-body">
-                                <ol class="breadcrumb">
+                            <div class="panel-body" >
+                                <ol class="breadcrumb" >
                                     <li>
                                         <a href="./home">
                                             Disciplinas
@@ -57,6 +57,7 @@
                                             <a href="./questões?assunto=<?php echo $rows_assuntos['disciplina_assunto_id']; ?>" class="list-group-item">
                                                 <span class="badge">
                                                     <!-- EXIBIR QUANTIDADE DE ASSUNTOS CADASTRADOS -->
+                                                    Questões: 
                                                     <?php echo $rows_assuntos['assunto_total_questoes']; ?>
                                                 </span>
                                                 <?php echo $rows_assuntos['disciplina_assunto_nome']; ?>
@@ -73,29 +74,31 @@
 
                 <div class="col-md-3">
 
-                  <div class="panel panel-primary">
-                    <div class="panel-heading" id="title-panel-select">Questões Selecionadas</div>
-                    <div class="panel-body">
-                      Panel content
+                    <div class="panel panel-default" style="">
+                        <div class="panel-heading" id="title-panel-select">
+                            Questões Selecionadas
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                        <div class="panel-footer option-select">
+                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Clear All</button>
+                                </div>
+
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Delete</button>
+                                </div>
+
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Print</button>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-footer option-select">
-                      <div class="btn-group btn-group-justified" role="group" aria-label="...">
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Clear All</button>
-                        </div>
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Delete</button>
-                        </div>
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Print</button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
 
                 </div>
                 <!-- end div col-ms-3  Questões selecionadas -->

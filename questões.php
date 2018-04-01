@@ -47,19 +47,34 @@
                                     </a>
                                 </li>
                                 <li class="active" >
-                                    <a href="./assunto?disciplina=<?php echo $disciplina_id ?>">
-                                        Assunto
-                                    </a>
+                                    <?php echo $resultado_assunto['disciplina_assunto_nome']; ?>
                                 </li>
                             </ol>
+                            
+                            <!-- TEMPORARIO ATE DEFINIR COMO EXIBIR AS QUESTOES E A ESTRUTURA DO DB -->
+                            <table class="table">
+                                <thead>
+                                    <th>ID</th>
+                                    <th>NOME</th>
+                                    <th>PERGUNTA</th>
+                                    <th>CRIADO EM </th>
+                                    <th>ATUALIZADO EM</th>
+                                </thead>
+                                <tbody>
+                                    <!-- Parte a ser repetida no while -->
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <!-- END parte a ser repetida no while -->
+                                </tbody>
+                                
+                            </table>
 
-                            <!-- Parte a ser repetida no while -->
-                            <div class="panel panel-default" >
-                                <div class="panel-heading">
-                                    <a href="#">[Assunto 1]</a>
-                                </div>
-                            </div>
-                            <!-- END parte a ser repetida no while -->
+                            <!-- END TEMPORARIO ATE DEFINIR COMO EXIBIR AS QUESTOES E A ESTRUTURA DO DB -->
                         </div>
                     </div>
                 </div>
@@ -67,29 +82,31 @@
 
                 <div class="col-md-3">
 
-                  <div class="panel panel-primary">
-                    <div class="panel-heading" id="title-panel-select">Questões Selecionadas</div>
-                    <div class="panel-body">
-                      Panel content
+                    <div class="panel panel-default" style="">
+                        <div class="panel-heading" id="title-panel-select">
+                            Questões Selecionadas
+                        </div>
+                        <div class="panel-body">
+                            Panel content
+                        </div>
+                        <div class="panel-footer option-select">
+                            <div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Clear All</button>
+                                </div>
+
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Delete</button>
+                                </div>
+
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-default">Print</button>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-footer option-select">
-                      <div class="btn-group btn-group-justified" role="group" aria-label="...">
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Clear All</button>
-                        </div>
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Delete</button>
-                        </div>
-
-                        <div class="btn-group" role="group">
-                          <button type="button" class="btn btn-default">Print</button>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
 
                 </div>
                 <!-- end div col-ms-3  Questões selecionadas -->
