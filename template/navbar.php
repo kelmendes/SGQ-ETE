@@ -2,8 +2,32 @@
         <nav class="navbar navbar-inverse navbar-static-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">ETE Palmares</a>
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./home">Home</a></li>
+
+                    <li>
+                        <a href="./home">Home</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sistema<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="#">Disciplianas</a>
+                                <a href="./usuarios">Usuários</a>
+                            </li>
+                            
+                            <li role="separator" class="divider"></li>
+
+                            <li>
+                                <a href="#">Drop - Discipliana</a>
+                                <a href="#">Drop - Usuários</a>
+                            </li>
+                            
+                        </ul> 
+                    </li> 
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nome_usuario']; ?><span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -20,7 +44,8 @@
                             
                         </ul> 
                     </li> 
-                </ul>         
+                </ul>
+
             </div>
             <!-- end container -->
         </nav>
