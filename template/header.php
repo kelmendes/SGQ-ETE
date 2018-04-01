@@ -13,7 +13,7 @@
         <style>
             #title-panel{
                font-size: 21pt; 
-               color: #fff;
+               color:   #808080;
                font-weight: bold;
             }
             #title-panel-select{
@@ -21,15 +21,13 @@
                color: #fff;
                font-weight: bold;
             }
-            a{
-               color: #000;
-            }
-            a:hover{
-               color: #483D8B;
-            }
+            
             .option-select ul li{
               list-style-type: none;
               float: left;
+            }
+            body {
+              background-color: #F0FFF0;
             }
         </style>
 

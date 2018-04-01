@@ -25,16 +25,18 @@
         <?php include './template/navbar.php'; ?>
 
         <div class="container">
-             <div class="row" >
-                  <div class="col-md-9">
-                     <div class="panel panel-primary">
-                          <div class="panel-heading" id="title-panel">Disciplinas</div>
-                          <div class="panel-body">
+            <div class="row" >
+                <div class="col-md-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" id="title-panel">Disciplinas</div>
+                        <div class="panel-body">
                             
                             <ol class="breadcrumb">
-                                <li class="active"><a href="./home">Disciplinas</a></li>
-                           </ol>
-                           <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA PARA PODER PERCORRER O ARRAY -->
+                                <li class="active">
+                                    Disciplinas
+                                </li>
+                            </ol>
+                            <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA PARA PODER PERCORRER O ARRAY -->
                            <?php if ($resultado_disciplana) { ?>
 
                                 <?php  while($rows_disciplinas = $resultado_disciplana->fetch(PDO::FETCH_ASSOC)) {?>
@@ -52,10 +54,9 @@
                                     <!-- END parte a ser repetida no while -->
                                 <?php } ?>
 
-                           <?php } ?>
-
-                       </div>
-                     </div>
+                               <?php } ?>
+                        </div>
+                    </div>
                 </div>
                 <!-- end col-md-6 --> 
 

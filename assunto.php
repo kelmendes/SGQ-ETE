@@ -32,7 +32,7 @@
         <div class="container">
              <div class="row" >
                   <div class="col-md-9">
-                        <div class="panel  panel-primary">
+                        <div class="panel  panel-default">
                             <div class="panel-heading" id="title-panel">
                                 <?php echo $resultado_disciplina['disciplina_nome']; ?>
                             </div>
@@ -43,15 +43,8 @@
                                             Disciplinas
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="./assunto?disciplina=<?php echo $disciplina_id ?>">
-                                            <?php echo $resultado_disciplina['disciplina_nome_abreviacao']; ?>
-                                        </a>
-                                    </li>
-                                    <li class="active" >
-                                        <a href="./assunto?disciplina=<?php echo $disciplina_id ?>">
-                                            Assunto
-                                        </a>
+                                    <li class="active">
+                                        <?php echo $resultado_disciplina['disciplina_nome_abreviacao']; ?>
                                     </li>
                                 </ol>
 
