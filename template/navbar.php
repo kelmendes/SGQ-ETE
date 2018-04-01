@@ -11,11 +11,7 @@
                             <li>
                                 <a href="./profile">Profile</a>
                             </li>
-
-                            <li>
-                                <a href="#">Questões cadastradas</a>
-                            </li>
-
+                            
                             <li role="separator" class="divider"></li>
 
                             <li>
