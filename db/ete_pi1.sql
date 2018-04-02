@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Mar-2018 às 19:39
+-- Generation Time: 02-Abr-2018 às 02:46
 -- Versão do servidor: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -59,6 +59,15 @@ CREATE TABLE `disciplina_assunto` (
   `disciplina_assunto_update_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `disciplina_assunto`
+--
+
+INSERT INTO `disciplina_assunto` (`disciplina_assunto_id_disciplina`, `disciplina_assunto_id`, `disciplina_assunto_nome`, `disciplina_assunto_create_at`, `disciplina_assunto_update_at`) VALUES
+(1, 1, 'Outro', '2018-03-27 13:57:24', NULL),
+(2, 2, 'Outro', '2018-03-27 13:57:24', NULL),
+(1, 3, 'Teste Assunto', '2018-03-27 14:16:24', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -73,6 +82,16 @@ CREATE TABLE `disciplina_assunto_questao` (
   `disciplina_assunto_questao_creat_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `disciplina_assunto_questao_update_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `disciplina_assunto_questao`
+--
+
+INSERT INTO `disciplina_assunto_questao` (`disciplina_assunto_questao_id_assunto`, `disciplina_assunto_questao_id`, `disciplina_assunto_questao_nome`, `disciplina_assunto_questao_pergunta`, `disciplina_assunto_questao_creat_at`, `disciplina_assunto_questao_update_at`) VALUES
+(1, 1, 'TESTE PRIMEIRA QUESTÃO', 'TESTE PERGUNTA PRIMEIRA QUESTÃO ', '2018-03-27 14:34:24', NULL),
+(2, 2, 'TESTE SEGUNDA QUESTAÃO ', 'TEXTO PERGUNTA SEGUNDA QUESTÃO', '2018-03-27 14:34:24', NULL),
+(3, 3, 'TESTE TERCEIRA QUESTÃO ', 'TEXTO DA TERCEIRA QUESTÃO ', '2018-03-27 14:35:09', NULL),
+(2, 4, 'TESTE QUARTA QUESTÃO', 'TEXTO DA QUARTA QUESTÃO', '2018-03-27 14:35:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -96,7 +115,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_matricula`, `user_nome`, `user_email`, `user_senha`, `user_role`, `user_create_at`, `user_update_at`) VALUES
-(1, '20181234', 'Teste Nome', 'teste@ete.com.br', 'b81763710aa4f3e844f296bbbd8958bb', 1, '2018-02-28 21:19:19', '2018-03-26 13:26:31');
+(1, '20181234', 'Teste Nome', 'teste@ete.com.br', 'b81763710aa4f3e844f296bbbd8958bb', 1, '2018-02-28 21:19:19', '2018-04-01 21:45:55'),
+(3, '20184321', 'KLEBSON MENDES DE ARAUJO', 'klerbersonmendes@gmail.com', 'a7227caec2597153ae5a84d3c775e790', 2, '2018-04-01 21:35:47', '2018-04-01 21:43:53');
 
 --
 -- Indexes for dumped tables
@@ -143,19 +163,19 @@ ALTER TABLE `disciplina`
 -- AUTO_INCREMENT for table `disciplina_assunto`
 --
 ALTER TABLE `disciplina_assunto`
-  MODIFY `disciplina_assunto_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `disciplina_assunto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `disciplina_assunto_questao`
 --
 ALTER TABLE `disciplina_assunto_questao`
-  MODIFY `disciplina_assunto_questao_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `disciplina_assunto_questao_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
