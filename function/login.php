@@ -27,7 +27,7 @@
 		//echo "Matricula: ".$resultado_valor['user_matricula'] . "</br>";
 		//echo "Email: ".$resultado_valor['user_email'];
 
-		$_SESSION['id_usuario'] = $resultado_valor['user_matricula'];
+		$_SESSION['id_usuario'] = $resultado_valor['user_id'];
 		$_SESSION['nome_usuario'] = $resultado_valor['user_nome'];
 		header('Location: ../home');
 	}else{

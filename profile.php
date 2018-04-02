@@ -14,7 +14,7 @@
     $conn = new Profile();
 
     // TESTANDO RESULTADO DA CONSULTA 
-    $resultado_valor = $conn->showInfo('1');
+    $resultado_valor = $conn->showInfo($idUser);
 
 ?>
 <!DOCTYPE html>
