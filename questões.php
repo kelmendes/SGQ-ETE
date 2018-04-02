@@ -58,7 +58,7 @@
                             </ol>
                             
                             <!-- TEMPORARIO ATE DEFINIR COMO EXIBIR AS QUESTOES E A ESTRUTURA DO DB -->
-                            <table class="table">
+                            <table class="table table-condensed">
                                 <thead>
                                     <th>ID</th>
                                     <th>NOME</th>
