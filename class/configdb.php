@@ -7,7 +7,7 @@
 	{
 		// ATRIBUTOS DA CLASS PARA CONEXÃO 
 		var $host = 'localhost';
-		var $dbname = 'ete_pi1';
+		var $dbname = 'test';
 		var $user = 'root';
 		var $password = '';
 	}

@@ -1,4 +1,4 @@
-		<!-- meta tags -->
+    <!-- meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- COR Barra Mobile -->
@@ -26,10 +26,11 @@
               float: left;
             }
             body {
-              background-color: #F0FFF0;
+              //background-color: #F0FFF0;
+              background-color: #F5FFFA;
             }
             .breadcrumb {
-              background-color:  #E0EEE0;
+              background-color: #E8E8E8;
             }
         </style>
 

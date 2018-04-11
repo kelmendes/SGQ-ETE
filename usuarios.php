@@ -112,7 +112,7 @@
                                                 <td><?php echo ($rows_usuarios['user_create_at']); ?></td>
                                                 <td><?php echo ($rows_usuarios['user_update_at']); ?></td>
                                                 <td>
-                                                    <a href="#" class="btn btn-primary btn-xs">Editar</a>
+                                                    <a href="./usuarios_edit?user=<?php echo ($rows_usuarios['user_id']); ?>" class="btn btn-primary btn-xs">Editar</a>
 
                                                     <!-- USUARIO FORM COM DADOS OCULTOS PARA USAR METHOD POST -->
                                                     <form method="POST" action="./function/usuario_cadastro_deletar">
