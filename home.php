@@ -87,6 +87,8 @@
                                             </span>
 
                                             <?php echo "<b>" . strtoupper($rows_disciplinas['disciplina_nome']) . "</b>"; ?>
+
+
                                         </a>
                                     </ul>
 
