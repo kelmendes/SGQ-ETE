@@ -52,19 +52,35 @@
         <div class="container">
              <div class="row" >
 
-                <?php
-                    foreach ($questao as &$value) {
-                        echo $value."</br>";
-                    }
-                ?>
+                <form class="form">
 
-                <?php
+                    <div class="form-group">
+                        <label for="IdQuestão">Id</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_id'] ?>" >
+                    </div>
 
-                    while ( $rows =  $alternativas->fetch(PDO::FETCH_ASSOC)){
-                        echo $rows['disciplina_assunto_questao_mutipla_escolha_id'] . "-";
-                        echo $rows['disciplina_assunto_questao_mutipla_escolha_text'] . "</br>";
-                    }
-                ?>
+                    <div class="form-group">
+                        <label for="IdQuestão">Nome</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_nome'] ?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="IdQuestão">Pergunta</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_pergunta'] ?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="IdQuestão">Data Criação</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_creat_at'] ?>" >
+                    </div>
+
+                    <select class="form-control">
+                        <?php while ( $rows =  $alternativas->fetch(PDO::FETCH_ASSOC)){ ?>
+                               <option><?php  echo $rows['disciplina_assunto_questao_mutipla_escolha_text'] ?></option> 
+                        <?php } ?>
+                    </select>
+
+                </form>
         
             </div>
             <!-- end  row --> 
