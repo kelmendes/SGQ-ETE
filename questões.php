@@ -89,7 +89,7 @@
                                                     ?>  
                                                 </td>
                                                 <td>
-                                                    <a href="#" class="btn btn-xs btn-primary" role="button">View</a>
+                                                    <a href="./questão_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">View</a>
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
