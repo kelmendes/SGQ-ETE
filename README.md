@@ -13,4 +13,4 @@ Sistema para geração de provas.
 * **Allan Ferreira** - *Initial work* - [AllanF](https://github.com/klebsonm)
 * **Eduardo J.** - *Initial work* - [EduardoJ](https://github.com/klebsonm)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/klebsonm/SGQ-ETE/contributors) who participated in this project.
