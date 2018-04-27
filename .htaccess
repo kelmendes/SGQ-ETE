@@ -1,6 +1,6 @@
-##Removendo extensão da url
-RewriteEngine On
-RewriteCond %{ENV:REDIRECT_STATUS} ^$
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ $1\.php
+##Removendo extensão da url
+RewriteEngine On
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ $1\.php
