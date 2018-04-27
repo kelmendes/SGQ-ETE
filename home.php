@@ -79,16 +79,11 @@
                                     <!-- Parte a ser repetida no while -->
                                     <ul class="list-group">
                                         <a href="./assunto?disciplina=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="list-group-item">
+
                                             <span class="badge">
                                                 <!-- EXIBIR QUANTIDADE DE ASSUNTOS CADASTRADOS -->
                                                 Assuntos: 
                                                 <?php echo $rows_disciplinas['disciplina_total_assunto']; ?>
-                                            </span>
-                                            <span class="badge">
-                                                Editar
-                                            </span>
-                                            <span class="badge">
-                                                Excluir
                                             </span>
 
                                             <?php echo "<b>" . strtoupper($rows_disciplinas['disciplina_nome']) . "</b>"; ?>
@@ -148,7 +143,7 @@
                         <h4 class="modal-title" id="title-panel">Cadastro de Disciplina</h4>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="./function/disciplian_cadastro">
+                        <form method="POST" action="./function/disciplina_cadastro">
                             <div class="form-group">
                                 <label for="disciplina_codigo">Código Disciplina</label>
                                 <input type="text" class="form-control" name="disciplina_codigo" placeholder="Código Disciplina" required maxlength="11">
