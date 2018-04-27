@@ -41,16 +41,17 @@
 					    `disciplina_codigo`,
 					    `disciplina_nome`,
 					    `disciplina_nome_abreviacao`,
-					    `disciplina_create_at`,
+					    `disciplina_create_at`
 					)VALUES(
-					    :disciplina_codigo,
-					    :disciplina_nome,
-					    :disciplina_nome_abreviacao,
-					    CURRENT_TIMESTAMP(),
+					    :disciplina_codigo ,
+					    :disciplina_nome ,
+					    :disciplina_nome_abreviacao ,
+					    CURRENT_TIMESTAMP() )
 					");
-			$star->bindValue(":disciplina_codigo", $disciplina_codigo, PDO::PARAM_STR);
-			$star->bindValue(":disciplina_nome", $disciplina_nome, PDO::PARAM_STR);
-			$star->bindValue(":disciplina_nome_abreviacao", $disciplina_nome_abreviacao, PDO::PARAM_STR);
+
+			$star->bindValue(":disciplina_codigo", $disciplina_codigo);
+			$star->bindValue(":disciplina_nome", $disciplina_nome);
+			$star->bindValue(":disciplina_nome_abreviacao", $disciplina_nome_abreviacao);
 
 			$run = $star->execute();
 			return $star;

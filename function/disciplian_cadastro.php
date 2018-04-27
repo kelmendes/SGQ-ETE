@@ -11,8 +11,12 @@
 	$disciplina_nome_abreviacao = (isset($_POST['disciplina_nome_abreviacao'])) ? $_POST['disciplina_nome_abreviacao'] : null;
 
 
+
+	
+
 	// TESTAR SE FORAM PASSADOS TODOS OS VALORES 
-	if( $disciplina_codigo != null and  $disciplina_nome != null and  $disciplina_nome_abreviacao ){
+	
+	if( $disciplina_codigo != null and  $disciplina_nome != null and  $disciplina_nome_abreviacao != null){
 
 		// ESTANCIANDO A CLASS
 		$disciplina = new Disciplina();
@@ -25,11 +29,12 @@
 		if($resultado_cadastro_disciplina){
 			$_SESSION['success_msg_CADASTRO_DISCIPLINA'] = "Disciplina cadastrada com sucesso!";
 		}
+
+
 		header('Location: ../home');
 
 
 	}
-
 
 
 ?>
