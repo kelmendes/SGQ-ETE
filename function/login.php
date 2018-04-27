@@ -29,6 +29,7 @@
 
 		$_SESSION['id_usuario'] = $resultado_valor['user_id'];
 		$_SESSION['nome_usuario'] = $resultado_valor['user_nome'];
+		$_SESSION['nivel_acesso'] = $resultado_valor['user_role'];
 		header('Location: ../home');
 	}else{
 		// MENAGEM QUE FICARA NO ALERTA

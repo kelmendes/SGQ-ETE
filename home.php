@@ -44,14 +44,14 @@
 
                             <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA -->
                                 <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
-                                <?php if (isset($_SESSION['erro_msg_CADASTRO_USUARIO'])) { ?>
+                                <?php if (isset($_SESSION['erro_msg_CADASTRO_DISCIPLINA'])) { ?>
                                    <div class="alert alert-danger" role="alert">
                                       <i class="glyphicon glyphicon-alert"></i>
                                       <?php 
                                          // EXIBINDO MESSAGEM
-                                         echo $_SESSION['erro_msg_CADASTRO_USUARIO']; 
+                                         echo $_SESSION['erro_msg_CADASTRO_DISCIPLINA']; 
                                          // APAGANDO MESSAGEM DA SESSION
-                                         unset($_SESSION['erro_msg_CADASTRO_USUARIO']);
+                                         unset($_SESSION['erro_msg_CADASTRO_DISCIPLINA']);
                                       ?>
                                    </div>
                                 <?php } ?>
