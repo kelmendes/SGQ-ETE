@@ -62,9 +62,9 @@
                                 <thead>
                                     <th>ID</th>
                                     <th>NOME</th>
-                                    <th>PERGUNTA</th>
                                     <th>CRIADO EM </th>
-                                    <th>ATUALIZADO EM</th>
+                                    <th>TIPO</th>
+                                    <th>AÇÕES</th>
                                 </thead>
                                 <tbody>
                                     <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA PARA PODER PERCORRER O ARRAY -->
@@ -74,9 +74,23 @@
                                             <tr>
                                                 <td><?php echo ($rows_questões['disciplina_assunto_questao_id']); ?></td>
                                                 <td><?php echo ($rows_questões['disciplina_assunto_questao_nome']); ?></td>
-                                                <td><?php echo ($rows_questões['disciplina_assunto_questao_pergunta']); ?></td>
                                                 <td><?php echo ($rows_questões['disciplina_assunto_questao_creat_at']); ?></td>
-                                                <td><?php echo ($rows_questões['disciplina_assunto_questao_update_at']); ?></td>
+                                                <td>
+                                                    <?php 
+                                                        if ($rows_questões['disciplina_assunto_questao_mutipla_escolha'] == 0){
+                                                            echo '<i class="glyphicon glyphicon-list">';
+                                                            //echo " DESCRITIVA";
+                                                            echo '</i>';
+                                                        } else {
+                                                            echo '<i class="glyphicon glyphicon-ok-circle">';
+                                                            //echo " MULTIPLA ESCOLHA";
+                                                            echo '</i>';
+                                                        }
+                                                    ?>  
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="btn btn-xs btn-primary" role="button">View</a>
+                                                </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
                                         <?php } ?>
