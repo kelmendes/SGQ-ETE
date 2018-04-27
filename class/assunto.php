@@ -56,6 +56,25 @@
 			return $star;
 		}
 
+		function newAssunto($disciplina_assunto_id_disciplina, $disciplina_assunto_nome){
+			$star = $this->conn->prepare("
+				INSERT INTO `disciplina_assunto`(
+				    `disciplina_assunto_id_disciplina`,
+				    `disciplina_assunto_nome`,
+				    `disciplina_assunto_create_at`
+				)
+				VALUES( 
+					:disciplina_assunto_id_disciplina ,
+				    :disciplina_assunto_nome ,
+				    CURRENT_TIMESTAMP() )");
+
+			$star->bindValue(":disciplina_assunto_id_disciplina", $disciplina_assunto_id_disciplina);
+			$star->bindValue(":disciplina_assunto_nome", $disciplina_assunto_nome);
+			$run = $star->execute();
+			return $run;
+
+		}
+
 
 	}
 

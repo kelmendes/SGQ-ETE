@@ -55,6 +55,38 @@
                                     </li>
                                 </ol>
 
+                                <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA -->
+                                <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                                <?php if (isset($_SESSION['erro_msg_ASSUNTO'])) { ?>
+                                   <div class="alert alert-danger" role="alert">
+                                      <i class="glyphicon glyphicon-alert"></i>
+                                      <?php 
+                                         // EXIBINDO MESSAGEM
+                                         echo $_SESSION['erro_msg_ASSUNTO']; 
+                                         // APAGANDO MESSAGEM DA SESSION
+                                         unset($_SESSION['erro_msg_ASSUNTO']);
+                                      ?>
+                                   </div>
+                                <?php } ?>
+                                 <!-- END ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA  -->
+
+                                 <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA -->
+                                    <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                                    <?php if (isset($_SESSION['success_msg_ASSUNTO'])) { ?>
+                                       <div class="alert alert-success" role="alert">
+                                          <i class="glyphicon glyphicon-ok"></i>
+                                          <?php 
+                                             // EXIBINDO MESSAGEM
+                                             echo $_SESSION['success_msg_ASSUNTO']; 
+                                             // APAGANDO MESSAGEM DA SESSION
+                                             unset($_SESSION['success_msg_ASSUNTO']);
+                                          ?>
+                                       </div>
+                                    <?php } ?>
+                                 <!-- END ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA  -->
+
+                                 
+
                                 <!-- TESTANDO SE O RESULTADO DA CONSULTA FOI BEM SUCEDIDA -->
                                 <?php if ($resultado_assuntos) { ?>
 
@@ -123,7 +155,7 @@
                         <h4 class="modal-title" id="title-panel">Adicionar Assunto</h4>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="#">
+                        <form method="POST" action="./function/disciplina_cadastro_assunto">
 
                             <div class="form-group">
                                 <input type="hidden" class="form-control" name="disciplina_codigo" placeholder="Código Disciplina" value=" <?php echo $disciplina_id; ?>" required maxlength="11" readonly >
