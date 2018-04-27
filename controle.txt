@@ -1,7 +1,7 @@
-Configuração do sistema
-
-#### Login
-index - enviar via post para (./function/login.php);
-login.php - adiciona a classe para testar os dados(./function/conecta.php);
-conecta.php - pegar os dados de configuração do banco de dados(configdb.php) e testar os dados e retorna o valor boleano;
-configdb.php -  mantem as informações de conexão com o banco de dados;
+Configuração do sistema
+
+#### Login
+index - enviar via post para (./function/login.php);
+login.php - adiciona a classe para testar os dados(./function/conecta.php);
+conecta.php - pegar os dados de configuração do banco de dados(configdb.php) e testar os dados e retorna o valor boleano;
+configdb.php -  mantem as informações de conexão com o banco de dados;
