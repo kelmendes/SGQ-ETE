@@ -18,7 +18,6 @@
         <title>Home</title>
         <!-- ADICIONANDO HEADER PADRÃO -->
         <?php include './template/header.php'; ?>
-
     </head>
     <body>
         <!-- ADICIONANDO A NAV BAR -->

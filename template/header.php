@@ -1,9 +1,7 @@
-    <!-- meta tags -->
+        <!-- meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-        
+                
         <!-- COR Barra Mobile -->
         <!-- Chrome, Firefox OS, Opera and Vivaldi -->
         <meta name="theme-color" content="##000080">

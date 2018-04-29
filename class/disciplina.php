@@ -7,6 +7,7 @@
 	*/
 	class Disciplina extends Configdb
 	{
+		
 		// FUNCTION PARA LISTAR DISCIPLINAS 
 		function listDisciplinas(){
 			$star = $this->conn->prepare("

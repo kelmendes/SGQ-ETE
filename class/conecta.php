@@ -7,7 +7,6 @@
 	*/
 	class Conecta extends Configdb
 	{
-
 		// FUNCTION PARA LOGAR NO SISTEMA 
 		function login($user, $senha){
 			$star = $this->conn->prepare("SELECT * FROM user WHERE user_matricula = :user AND  user_senha = :senha");

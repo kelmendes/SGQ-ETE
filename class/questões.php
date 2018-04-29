@@ -7,7 +7,6 @@
 	*/
 	class Questões extends Configdb
 	{
-
 		// FUNCTION PARA PEGAR INFORMACOES QUE SAO EXIBIDAS NA PAGINA  
 		function getInfoAssunto($disciplina_assunto_id){
 			$star = $this->conn->prepare("

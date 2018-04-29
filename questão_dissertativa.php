@@ -17,7 +17,7 @@
 
     $star->bindValue(":disciplina_assunto_id", $disciplina_assunto_questao_id , PDO::PARAM_INT);
     $run = $star->execute();
-    $rs = $star->fetch(PDO::FETCH_ASSOC);
+    $questao = $star->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,34 @@
         <div class="container">
              <div class="row" >
 
-                <?php print_r($rs); ?>
+                <form class="form">
+
+                    <div class="form-group">
+                        <label for="IdQuestão">Id</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_id'] ?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="IdQuestão">Nome</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_nome'] ?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="IdQuestão">Pergunta</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_pergunta'] ?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="IdQuestão">Data Criação</label>
+                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_creat_at'] ?>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="IdQuestão">Resposta</label>
+                        <textarea  class="form-control" rows="2"></textarea>
+                    </div>
+
+                </form>
         
             </div>
             <!-- end  row --> 

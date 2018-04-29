@@ -89,7 +89,11 @@
                                                     ?>  
                                                 </td>
                                                 <td>
-                                                    <a href="./questão_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">View</a>
+                                                    <?php  if ($rows_questões['disciplina_assunto_questao_mutipla_escolha'] == 0){ ?>
+                                                        <a href="./questão_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">View</a>
+                                                    <?php } else { ?>
+                                                        <a href="./questão_multi_escolha?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">View</a>
+                                                    <?php } ?>  
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
