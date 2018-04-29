@@ -8,6 +8,15 @@
 	class Profile extends Configdb
 	{
 
+		var $conn;
+
+
+		function __construct()
+		{
+			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+		}
+		
+
 		// FUNCTION PARA LISTAR OS USUARIOS 
 		function showInfo($id){
 			$star = $this->conn->prepare("SELECT * FROM user WHERE user_id = :id");

@@ -16,6 +16,7 @@
 
     //FAZENDO CONSULTA PELA CLASS 
     $resultado_assuntos = $assunto->listAssuntos($disciplina_id);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +94,7 @@
                                     <?php  while($rows_assuntos = $resultado_assuntos->fetch(PDO::FETCH_ASSOC)) {?>
                                      <!-- Parte a ser repetida no while -->
                                      <ul class="list-group">
-                                            <a href="./questões?assunto=<?php echo $rows_assuntos['disciplina_assunto_id']; ?>" class="list-group-item">
+                                            <a href="./questoes?assunto=<?php echo $rows_assuntos['disciplina_assunto_id']; ?>" class="list-group-item">
                                                 <span class="badge">
                                                     <!-- EXIBIR QUANTIDADE DE ASSUNTOS CADASTRADOS -->
                                                     Questões: 

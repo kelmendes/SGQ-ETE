@@ -8,6 +8,14 @@
 	class Disciplina extends Configdb
 	{
 		
+		var $conn;
+
+
+		function __construct()
+		{
+			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+		}
+		
 		// FUNCTION PARA LISTAR DISCIPLINAS 
 		function listDisciplinas(){
 			$star = $this->conn->prepare("

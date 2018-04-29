@@ -7,8 +7,18 @@
 	*/
 	class Questões extends Configdb
 	{
+
+		var $conn;
+
+
+		function __construct()
+		{
+			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+		}
+		
 		// FUNCTION PARA PEGAR INFORMACOES QUE SAO EXIBIDAS NA PAGINA  
 		function getInfoAssunto($disciplina_assunto_id){
+
 			$star = $this->conn->prepare("
 				SELECT
 				    S.disciplina_assunto_nome,
