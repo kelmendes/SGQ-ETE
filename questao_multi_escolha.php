@@ -2,10 +2,15 @@
     // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
     require './function/verificar_login.php';
 
-    $host = 'testep1.mysql.dbaas.com.br';
-    $dbname = 'testep1';
-    $user = 'testep1';
-    $password = 'P@ssAlun0';
+    //$host = 'testep1.mysql.dbaas.com.br';
+    //$dbname = 'testep1';
+    //$user = 'testep1';
+    //$password = 'P@ssAlun0';
+
+    $host = 'localhost';
+    $dbname = 'test';
+    $user = 'root';
+    $password = '';
 
 
     $disciplina_assunto_questao_id = (isset($_GET['id']))? $_GET['id'] : null;
