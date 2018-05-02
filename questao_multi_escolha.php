@@ -56,6 +56,14 @@
 
                     <div class="form-group">
                         <label for="IdQuestão">Alternativas</label>
+                        <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+                        <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
+                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
+                                Adicionar
+                            </button>    
+                        <?php } ?>
+                        <!-- END  TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->  
+
                         <?php while ( $rows =  $alternativas->fetch(PDO::FETCH_ASSOC)){ ?> 
                            <div >
                                 <label class="radio-inline">
@@ -72,6 +80,42 @@
             <!-- end  row --> 
         </div>
         <!--edn container  -->
+
+    <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+    <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModalDisciplina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="title-panel">Cadastro de Alternativa</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="./function/disciplina_cadastro_questao">
+
+                        <div class="form-group">
+                            <label for="disciplina_assunto_questao_id">Questão</label>
+                            <input type="text" class="form-control" name="disciplina_assunto_questao_id" required readonly value="<?php echo $disciplina_assunto_questao_id; ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="disciplina_assunto_questao_mutipla_escolha_text">Alternativa</label>
+                            <input type="text" class="form-control" name="disciplina_assunto_questao_mutipla_escolha_text" placeholder="Alternativa" required maxlength="249">
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Adicionar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+    <!--END TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
 
 
     <!-- ADICIONANDO HEADER PADRÃO -->
