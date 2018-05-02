@@ -182,7 +182,7 @@
 
                         <div class="form-group">
                             <label for="disciplinaquestao_pergunta">Pergunta</label>
-                            <input type="text" class="form-control" name="disciplinaquestao_pergunta" placeholder="Sigla Disciplina" required maxlength="449">
+                            <input type="text" class="form-control" name="disciplinaquestao_pergunta" placeholder="Pergunta" required maxlength="449">
                         </div>
 
                 </div>
