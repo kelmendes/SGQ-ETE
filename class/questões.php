@@ -59,6 +59,54 @@
 
 		}
 
+		function getQuestaoDissertativa($disciplina_assunto_questao_id){
+			$star = $this->conn->prepare("
+				SELECT
+		            *
+		        FROM
+		            disciplina_assunto_questao AS Q
+		        WHERE
+		            Q.disciplina_assunto_questao_id = :disciplina_assunto_id
+				");	
+    		$star->bindValue(":disciplina_assunto_id", $disciplina_assunto_questao_id , PDO::PARAM_INT);
+			$run = $star->execute();
+			$rs = $star->fetch(PDO::FETCH_ASSOC);
+			return $rs;
+		}
+
+		function getQuestaoMultiEscolha($disciplina_assunto_questao_id){
+			$star = $this->conn->prepare("
+				SELECT
+		            *
+		        FROM
+		            disciplina_assunto_questao AS Q
+		        WHERE
+		            Q.disciplina_assunto_questao_id = :disciplina_assunto_id
+				");	
+    		$star->bindValue(":disciplina_assunto_id", $disciplina_assunto_questao_id , PDO::PARAM_INT);
+			$run = $star->execute();
+			$rs = $star->fetch(PDO::FETCH_ASSOC);
+			return $rs;
+
+		}
+
+		function getQuestaoMultiEscolhaAlternativas($disciplina_assunto_questao_id){
+			$star = $this->conn->prepare("
+				SELECT
+		            *
+		        FROM
+		            disciplina_assunto_questao_mutipla_escolha AS M
+		        WHERE
+		            M.disciplina_assunto_questao_id = :disciplina_assunto_id
+
+		    ");
+
+		    $star->bindValue(":disciplina_assunto_id", $disciplina_assunto_questao_id , PDO::PARAM_INT);
+			$star->execute();
+			return $star;
+
+		}
+
 
 		function newQuestao($id_assunto, $mutipla_escolha, $questao_nome, $questao_pergunta){
 			$star = $this->conn->prepare("
