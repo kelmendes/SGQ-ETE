@@ -38,7 +38,12 @@
                         <div class="panel-heading" id="title-panel">
                             <?php echo ucwords(strtolower($resultado_assunto['disciplina_nome'])); ?> 
                             - 
-                            <?php echo $resultado_assunto['disciplina_assunto_nome']; ?>      
+                            <?php echo $resultado_assunto['disciplina_assunto_nome']; ?> 
+
+                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
+                                Adicionar
+                            </button>    
+
                         </div>
                         <div class="panel-body">
                             <ol class="breadcrumb">
@@ -142,8 +147,53 @@
             </div>
             <!-- end  row --> 
         </div>
-      <!--edn container  -->
-      <!-- ADICIONANDO HEADER PADRÃO -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModalDisciplina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="title-panel">Cadastro de Questão</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="./function/disciplina_cadastro_questao">
+
+                        <div class="form-group">
+                            <label for="disciplina_questao_id_assunto">Assunto</label>
+                            <input type="text" class="form-control" name="disciplina_questao_id_assunto" required readonly value="<?php echo $assunto_id; ?>">
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="disciplina_questao_mutipla_escolha">Tipo</label>
+                            <select class="form-control" name="disciplina_questao_mutipla_escolha" required>
+                                <option value="">Selecionar tipo</option>
+                                <option value="0">Dissertativa</option>
+                                <option value="1">Múltipla Escolha</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="disciplina_questao_nome">Nome</label>
+                            <input type="text" class="form-control" name="disciplina_questao_nome" placeholder="Nome" required maxlength="49">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="disciplinaquestao_pergunta">Pergunta</label>
+                            <input type="text" class="form-control" name="disciplinaquestao_pergunta" placeholder="Sigla Disciplina" required maxlength="449">
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Adicionar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--edn container  -->
+    <!-- ADICIONANDO HEADER PADRÃO -->
     <?php include './template/footer.php'; ?>
     </body>
 </html>

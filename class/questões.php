@@ -59,6 +59,33 @@
 
 		}
 
+
+		function newQuestao($id_assunto, $mutipla_escolha, $questao_nome, $questao_pergunta){
+			$star = $this->conn->prepare("
+				INSERT INTO `disciplina_assunto_questao`(
+				    `disciplina_assunto_questao_id_assunto`,
+				    `disciplina_assunto_questao_nome`,
+				    `disciplina_assunto_questao_pergunta`,
+				    `disciplina_assunto_questao_mutipla_escolha`,
+				    `disciplina_assunto_questao_creat_at`
+				)
+				VALUES(
+					:disciplina_assunto_questao_id_assunto,
+				    :disciplina_assunto_questao_nome,
+				    :disciplina_assunto_questao_pergunta,
+				    :disciplina_assunto_questao_mutipla_escolha,
+					CURRENT_TIMESTAMP()	
+				)");	
+			$star->bindValue(":disciplina_assunto_questao_id_assunto", $id_assunto, PDO::PARAM_INT);
+		    $star->bindValue(":disciplina_assunto_questao_mutipla_escolha", $mutipla_escolha );
+		    $star->bindValue(":disciplina_assunto_questao_nome", $questao_nome );
+		    $star->bindValue(":disciplina_assunto_questao_pergunta", $questao_pergunta );
+
+			$run = $star->execute();
+			return $star;
+
+		}
+
 	}
 
 
