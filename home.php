@@ -39,6 +39,10 @@
                             <?php } ?>
                             <!-- END  TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
 
+                            <button type="button" onclick="Mudarestado('minhaDiv')">Mostrar / Esconder</button>
+
+
+
                         </div>
                         <div class="panel-body">
                             
@@ -108,14 +112,88 @@
                 <!-- end col-md-6 --> 
 
 
-                <div class="col-md-3">
+                <div class="col-md-3" id="minhaDiv">
 
                     <div class="panel panel-default" style="">
                         <div class="panel-heading" id="title-panel-select">
                             Questões Selecionadas
                         </div>
                         <div class="panel-body">
-                            Panel content
+                            <table class="table table-condensed table-striped">
+                                <thead>
+                                    <th>Id</th>
+                                    <th>Nome</th>
+                                    <th>Ações</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>#</td>
+                                        <td>#</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
                         <div class="panel-footer option-select">
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -180,8 +258,16 @@
         <?php } ?>
         <!--END TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
 
+        <script type="text/javascript">
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if(display == "none")
+                    document.getElementById(el).style.display = 'block';
+                else
+                    document.getElementById(el).style.display = 'none';
 
-
+            }
+        </script>
         <!-- ADICIONANDO HEADER PADRÃO -->
         <?php include './template/footer.php'; ?>
     </body>
