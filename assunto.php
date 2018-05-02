@@ -104,7 +104,7 @@
                                                     Questões: 
                                                     <?php echo $rows_assuntos['assunto_total_questoes']; ?>
                                                 </span>
-                                                <?php echo ucwords(strtolower($rows_assuntos['disciplina_assunto_nome'])); ?>
+                                                <?php echo strtoupper($rows_assuntos['disciplina_assunto_nome']); ?>
                                             </a>
                                         </ul>
                                      <!-- END parte a ser repetida no while -->

@@ -36,7 +36,7 @@
                 <div class="col-md-9">
                     <div class="panel  panel-default">
                         <div class="panel-heading" id="title-panel">
-                            <?php echo ucwords(strtolower($resultado_assunto['disciplina_nome'])); ?> 
+                            <?php echo strtoupper($resultado_assunto['disciplina_nome']); ?> 
                             <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
                             <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
                                 <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
