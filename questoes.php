@@ -80,7 +80,7 @@
 
                              <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA QUESTAO -->
                                 <!-- TESTAR SE SESSION success_msg_ASSUNTO EXISTE -->
-                                <?php if (isset($_SESSION['success_msg_ASSUNTO'])) { ?>
+                                <?php if (isset($_SESSION['success_msg_QUESTAO'])) { ?>
                                    <div class="alert alert-success" role="alert">
                                       <i class="glyphicon glyphicon-ok"></i>
                                       <?php 

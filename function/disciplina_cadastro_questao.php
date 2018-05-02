@@ -1,5 +1,6 @@
 <?php
-
+// INICIANDO SESSION PARA DEIXAR MENSAGEM 
+session_start();
 
 $id_assunto = (isset($_POST['disciplina_questao_id_assunto'])) ? $_POST['disciplina_questao_id_assunto'] : null;
 $mutipla_escolha = (isset($_POST['disciplina_questao_mutipla_escolha'])) ? $_POST['disciplina_questao_mutipla_escolha'] : null;
