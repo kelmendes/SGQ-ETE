@@ -2,9 +2,15 @@
     // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
     require './function/verificar_login.php';
 
+    $host = 'testep1.mysql.dbaas.com.br';
+    $dbname = 'testep1';
+    $user = 'testep1';
+    $password = 'P@ssAlun0';
+
+
     $disciplina_assunto_questao_id = (isset($_GET['id']))? $_GET['id'] : null;
 
-    $conn = new PDO('mysql:host=localhost;dbname=test', 'root','', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+    $conn = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
     $star = $conn->prepare("
         SELECT
