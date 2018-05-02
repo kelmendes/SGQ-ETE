@@ -14,7 +14,7 @@
 	if ( $questao_id  != null and  $questao_mutipla_escolha_text  != null){
 
 		if (strlen($questao_mutipla_escolha_text) > 249 ){
-			$_SESSION['erro_msg_ASSUNTO'] = "<b>Texto da Alternativa</b> ultrapassa o limite aceito pelo sistema!";
+			$_SESSION['erro_msg_ALTERNATIVA'] = "<b>Texto da Alternativa</b> ultrapassa o limite aceito pelo sistema!";
 			header($text);
 			exit;
 		}
@@ -28,7 +28,7 @@
 
 		// SE CADASTRADO COM SUCESSO RETORNARA TRUE E CAIRA NA CONDICAO QUE DEIXARA A MENSAGEM
 		if($resultado_cadastro_alternativa){
-			$_SESSION['success_msg_ASSUNTO'] = "<b>Alternativa</b> cadastrada com sucesso!";
+			$_SESSION['success_msg_ALTERNATIVA'] = "<b>Alternativa</b> cadastrada com sucesso!";
 		}
 
 		header($text);

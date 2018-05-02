@@ -53,6 +53,36 @@
                         <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_creat_at'] ?>" >
                     </div>
 
+                    <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+                    <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                    <?php if (isset($_SESSION['erro_msg_ALTERNATIVA'])) { ?>
+                       <div class="alert alert-danger" role="alert">
+                          <i class="glyphicon glyphicon-alert"></i>
+                          <?php 
+                             // EXIBINDO MESSAGEM
+                             echo $_SESSION['erro_msg_ALTERNATIVA']; 
+                             // APAGANDO MESSAGEM DA SESSION
+                             unset($_SESSION['erro_msg_ALTERNATIVA']);
+                          ?>
+                       </div>
+                    <?php } ?>
+                     <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+
+                     <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+                        <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                        <?php if (isset($_SESSION['success_msg_ALTERNATIVA'])) { ?>
+                           <div class="alert alert-success" role="alert">
+                              <i class="glyphicon glyphicon-ok"></i>
+                              <?php 
+                                 // EXIBINDO MESSAGEM
+                                 echo $_SESSION['success_msg_ALTERNATIVA']; 
+                                 // APAGANDO MESSAGEM DA SESSION
+                                 unset($_SESSION['success_msg_ALTERNATIVA']);
+                              ?>
+                           </div>
+                        <?php } ?>
+                     <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+
 
                     <div class="form-group">
                         <label for="IdQuestão">Alternativas</label>
