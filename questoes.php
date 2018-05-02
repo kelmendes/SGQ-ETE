@@ -136,14 +136,18 @@
                                                             View
                                                         </a>
                                                     <?php } ?>  
-                                                    <a href="#" class="btn btn-xs btn-success" role="button">
-                                                        <span class="glyphicon glyphicon-plus"></span>
-                                                        Select
-                                                    </a>
-                                                    <a href="#" class="btn btn-xs btn-danger" role="button">
-                                                        <span class="glyphicon glyphicon-trash"></span>
-                                                        Drop
-                                                    </a>
+                                                    <!-- TESTANDO SE O USUARIO TEM PERMISSAO-->
+                                                    <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
+                                                        <a href="#" class="btn btn-xs btn-success" role="button">
+                                                            <span class="glyphicon glyphicon-plus"></span>
+                                                            Select
+                                                        </a>
+                                                        <a href="#" class="btn btn-xs btn-danger" role="button">
+                                                            <span class="glyphicon glyphicon-trash"></span>
+                                                            Drop
+                                                        </a>
+                                                    <?php } ?>
+                                                    <!-- END TESTANDO SE O USUARIO TEM PERMISSAO-->
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
