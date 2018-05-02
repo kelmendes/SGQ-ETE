@@ -39,11 +39,13 @@
                             <?php echo ucwords(strtolower($resultado_assunto['disciplina_nome'])); ?> 
                             - 
                             <?php echo $resultado_assunto['disciplina_assunto_nome']; ?> 
-
-                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
-                                Adicionar
-                            </button>    
-
+                            <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+                            <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
+                                    Adicionar
+                                </button>    
+                            <?php } ?>
+                            <!-- END  TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->  
                         </div>
                         <div class="panel-body">
                             <ol class="breadcrumb">
@@ -147,6 +149,8 @@
             </div>
             <!-- end  row --> 
         </div>
+    <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+    <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
     <!-- Modal -->
     <div class="modal fade" id="myModalDisciplina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -192,6 +196,8 @@
             </div>
         </div>
     </div>
+    <?php } ?>
+    <!--END TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
     <!--edn container  -->
     <!-- ADICIONANDO HEADER PADRÃO -->
     <?php include './template/footer.php'; ?>
