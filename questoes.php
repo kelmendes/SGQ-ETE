@@ -61,6 +61,37 @@
                                     <?php echo $resultado_assunto['disciplina_assunto_nome']; ?>
                                 </li>
                             </ol>
+
+
+                            <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA QUESTAO -->
+                            <!-- TESTAR SE SESSION erro_msg_ASSUNTO EXISTE -->
+                            <?php if (isset($_SESSION['erro_msg_QUESTAO'])) { ?>
+                               <div class="alert alert-danger" role="alert">
+                                  <i class="glyphicon glyphicon-alert"></i>
+                                  <?php 
+                                     // EXIBINDO MESSAGEM
+                                     echo $_SESSION['erro_msg_QUESTAO']; 
+                                     // APAGANDO MESSAGEM DA SESSION
+                                     unset($_SESSION['erro_msg_QUESTAO']);
+                                  ?>
+                               </div>
+                            <?php } ?>
+                             <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA QUESTAO -->
+
+                             <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA QUESTAO -->
+                                <!-- TESTAR SE SESSION success_msg_ASSUNTO EXISTE -->
+                                <?php if (isset($_SESSION['success_msg_ASSUNTO'])) { ?>
+                                   <div class="alert alert-success" role="alert">
+                                      <i class="glyphicon glyphicon-ok"></i>
+                                      <?php 
+                                         // EXIBINDO MESSAGEM
+                                         echo $_SESSION['success_msg_QUESTAO']; 
+                                         // APAGANDO MESSAGEM DA SESSION
+                                         unset($_SESSION['success_msg_QUESTAO']);
+                                      ?>
+                                   </div>
+                                <?php } ?>
+                             <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA QUESTAO -->
                             
                             <!-- TEMPORARIO ATE DEFINIR COMO EXIBIR AS QUESTOES E A ESTRUTURA DO DB -->
                             <table class="table table-condensed">

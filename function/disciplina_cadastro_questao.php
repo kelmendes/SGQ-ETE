@@ -17,13 +17,13 @@ if ( $id_assunto  != null and $mutipla_escolha != null and $questao_nome != null
 	//echo "questao_pergunta: " . $questao_pergunta . "</br>";
 
 	if (strlen($questao_nome) > 50 ){
-		$_SESSION['erro_msg_ASSUNTO'] = "<b>Nome Questão</b> ultrapassa o limite aceito pelo sistema!";
+		$_SESSION['erro_msg_QUESTAO'] = "<b>Nome Questão</b> ultrapassa o limite aceito pelo sistema!";
 		header($text);
 		exit;
 	}
 
 	if (strlen($questao_pergunta) > 499 ){
-		$_SESSION['erro_msg_ASSUNTO'] = "<b>Questão Pergunta</b> ultrapassa o limite aceito pelo sistema!";
+		$_SESSION['erro_msg_QUESTAO'] = "<b>Questão Pergunta</b> ultrapassa o limite aceito pelo sistema!";
 		header($text);
 		exit;
 	}
@@ -40,7 +40,7 @@ if ( $id_assunto  != null and $mutipla_escolha != null and $questao_nome != null
 
 	// SE CADASTRADO COM SUCESSO RETORNARA TRUE E CAIRA NA CONDICAO QUE DEIXARA A MENSAGEM
 	if($resultado_cadastro_questão){
-		$_SESSION['success_msg_ASSUNTO'] = "<b>Questão</b> cadastrada com sucesso!";
+		$_SESSION['success_msg_QUESTAO'] = "<b>Questão</b> cadastrada com sucesso!";
 	}
 
 	header($text);
