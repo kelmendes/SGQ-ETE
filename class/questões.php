@@ -134,6 +134,25 @@
 
 		}
 
+		function newQuestaoAlternativa( $questao_id, $questao_mutipla_escolha_text ){
+			$star = $this->conn->prepare("
+				INSERT INTO `disciplina_assunto_questao_mutipla_escolha`(
+				    `disciplina_assunto_questao_id`,
+				    `disciplina_assunto_questao_mutipla_escolha_text`
+				)
+				VALUES(
+					:disciplina_assunto_questao_id,
+				    :disciplina_assunto_questao_mutipla_escolha_text
+				)");	
+			$star->bindValue(":disciplina_assunto_questao_id", $questao_id, PDO::PARAM_INT);
+		    $star->bindValue(":disciplina_assunto_questao_mutipla_escolha_text", $questao_mutipla_escolha_text );
+
+			$run = $star->execute();
+			return $star;
+
+		}
+
+
 	}
 
 

@@ -93,7 +93,7 @@
                     <h4 class="modal-title" id="title-panel">Cadastro de Alternativa</h4>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="./function/disciplina_cadastro_questao">
+                    <form method="POST" action="./function/disciplina_cadastro_questao_alternativa">
 
                         <div class="form-group">
                             <label for="disciplina_assunto_questao_id">Questão</label>
