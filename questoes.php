@@ -126,10 +126,24 @@
                                                 </td>
                                                 <td>
                                                     <?php  if ($rows_questões['disciplina_assunto_questao_mutipla_escolha'] == 0){ ?>
-                                                        <a href="./questao_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">View</a>
+                                                        <a href="./questao_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">
+                                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                                            View
+                                                        </a>
                                                     <?php } else { ?>
-                                                        <a href="./questao_multi_escolha?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">View</a>
+                                                        <a href="./questao_multi_escolha?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">
+                                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                                            View
+                                                        </a>
                                                     <?php } ?>  
+                                                    <a href="#" class="btn btn-xs btn-success" role="button">
+                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                        Select
+                                                    </a>
+                                                    <a href="#" class="btn btn-xs btn-danger" role="button">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                        Drop
+                                                    </a>
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
