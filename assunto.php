@@ -35,14 +35,18 @@
                   <div class="col-md-9">
                         <div class="panel  panel-default">
                             <div class="panel-heading" id="title-panel">
-                                <div class="col-md-11">
-                                    <?php echo ucwords(strtolower($resultado_disciplina['disciplina_nome'])); ?>
-                                -
+                                <?php echo mb_strimwidth($resultado_disciplina['disciplina_nome'], 0, 35, "..."); ?>
+                                    -
                                 Assuntos
-                                </div>
-                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
-                                    Adicionar
-                                </button>
+
+                                <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+                                <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
+                                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
+                                        Adicionar
+                                    </button>
+                                <?php } ?>
+                                <!-- END  TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+                                
                             </div>
                             <div class="panel-body" >
                                 <ol class="breadcrumb" >
@@ -147,6 +151,8 @@
         </div>
         <!--edn container  -->
 
+        <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+        <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
         <!-- Modal -->
         <div class="modal fade" id="myModalDisciplina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -175,7 +181,11 @@
                 </div>
             </div>
         </div>
-        <!-- ADICIONANDO HEADER PADRÃO -->
+        <?php } ?>
+        <!--END TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+
+
+        <!-- ADICIONANDO FOOTER PADRÃO -->
         <?php include './template/footer.php'; ?>
     </body>
 </html>

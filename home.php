@@ -28,10 +28,17 @@
                 <div class="col-md-9">
                     <div class="panel panel-default">
                         <div class="panel-heading" id="title-panel">
-                            <div class="col-md-11">Disciplinas</div>
-                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
-                                Adicionar
-                            </button>
+                            Disciplinas
+
+                            <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+                            <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
+
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
+                                    Adicionar
+                                </button>
+                            <?php } ?>
+                            <!-- END  TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+
                         </div>
                         <div class="panel-body">
                             
@@ -135,6 +142,8 @@
             <!-- end  row --> 
         </div>
 
+        <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+        <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
         <!-- Modal -->
         <div class="modal fade" id="myModalDisciplina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -168,6 +177,8 @@
                 </div>
             </div>
         </div>
+        <?php } ?>
+        <!--END TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
 
 
 
