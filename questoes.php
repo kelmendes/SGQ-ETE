@@ -114,13 +114,15 @@
                                                 <td>
                                                     <?php 
                                                         if ($rows_questões['disciplina_assunto_questao_mutipla_escolha'] == 0){
-                                                            echo '<i class="glyphicon glyphicon-list">';
-                                                            //echo " DESCRITIVA";
-                                                            echo '</i>';
+                                                            echo '
+                                                            <a href="#" class="btn btn-xs btn-default" role="button">
+                                                                <span class="glyphicon glyphicon-list"></span>
+                                                            </a>';
                                                         } else {
-                                                            echo '<i class="glyphicon glyphicon-ok-circle">';
-                                                            //echo " MULTIPLA ESCOLHA";
-                                                            echo '</i>';
+                                                            echo '
+                                                            <a href="#" class="btn btn-xs btn-default" role="button">
+                                                                <span class="glyphicon glyphicon-ok-circle"></span>
+                                                            </a>';
                                                         }
                                                     ?>  
                                                 </td>
@@ -136,18 +138,16 @@
                                                             View
                                                         </a>
                                                     <?php } ?>  
-                                                    <!-- TESTANDO SE O USUARIO TEM PERMISSAO-->
-                                                    <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
-                                                        <a href="#" class="btn btn-xs btn-success" role="button">
-                                                            <span class="glyphicon glyphicon-plus"></span>
-                                                            Select
-                                                        </a>
-                                                        <a href="#" class="btn btn-xs btn-danger" role="button">
-                                                            <span class="glyphicon glyphicon-trash"></span>
-                                                            Drop
-                                                        </a>
-                                                    <?php } ?>
-                                                    <!-- END TESTANDO SE O USUARIO TEM PERMISSAO-->
+                                                    <a href="#" class="btn btn-xs btn-success" role="button">
+                                                        <span class="glyphicon glyphicon-plus"></span>
+                                                        Select
+                                                    </a>
+                                                    <a href="#" class="btn btn-xs btn-danger" role="button">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                        Drop
+                                                    </a>
+
+                                                    <a href="#my_modal" data-toggle="modal" data-book-id="<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>">Open Modal</a>
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
@@ -243,9 +243,38 @@
             </div>
         </div>
     </div>
-    <?php } ?>
-    <!--END TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
+
     <!--edn container  -->
+    <?php } ?>
+
+    <div class="modal" id="my_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Modal header</h4>
+                </div> <!-- end modal-header -->
+
+                <div class="modal-body">
+                    <p>some content</p>
+                    <input type="text" name="bookId" value=""/>
+                </div><!-- end modal-body -->
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div><!-- end modal-footer -->
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('#my_modal').on('show.bs.modal', function(e) {
+            var bookId = $(e.relatedTarget).data('book-id');
+            $(e.currentTarget).find('input[name="bookId"]').val(bookId);
+        });
+    </script>
     <!-- ADICIONANDO HEADER PADRÃO -->
     <?php include './template/footer.php'; ?>
     </body>

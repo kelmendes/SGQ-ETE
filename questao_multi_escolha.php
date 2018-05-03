@@ -30,86 +30,83 @@
         
         <div class="container">
              <div class="row" >
+                <div class="panel panel-default">   
+                    <div class="panel panel-heading"></div><!-- end panel heading -->
+                    <div class="panel panel-body">
+                        <form class="form">
 
-                <form class="form">
-
-                    <div class="form-group">
-                        <label for="IdQuestão">Id</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_id'] ?>" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="IdQuestão">Nome</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_nome'] ?>" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="IdQuestão">Pergunta</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_pergunta'] ?>" >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="IdQuestão">Data Criação</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_creat_at'] ?>" >
-                    </div>
-
-                    <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
-                    <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
-                    <?php if (isset($_SESSION['erro_msg_ALTERNATIVA'])) { ?>
-                       <div class="alert alert-danger" role="alert">
-                          <i class="glyphicon glyphicon-alert"></i>
-                          <?php 
-                             // EXIBINDO MESSAGEM
-                             echo $_SESSION['erro_msg_ALTERNATIVA']; 
-                             // APAGANDO MESSAGEM DA SESSION
-                             unset($_SESSION['erro_msg_ALTERNATIVA']);
-                          ?>
-                       </div>
-                    <?php } ?>
-                     <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
-
-                     <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
-                        <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
-                        <?php if (isset($_SESSION['success_msg_ALTERNATIVA'])) { ?>
-                           <div class="alert alert-success" role="alert">
-                              <i class="glyphicon glyphicon-ok"></i>
-                              <?php 
-                                 // EXIBINDO MESSAGEM
-                                 echo $_SESSION['success_msg_ALTERNATIVA']; 
-                                 // APAGANDO MESSAGEM DA SESSION
-                                 unset($_SESSION['success_msg_ALTERNATIVA']);
-                              ?>
-                           </div>
-                        <?php } ?>
-                     <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
-
-
-                    <div class="form-group">
-                        <label for="IdQuestão">Alternativas</label>
-                        <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
-                        <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
-                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
-                                Adicionar
-                            </button>    
-                        <?php } ?>
-                        <!-- END  TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->  
-
-                        <?php while ( $rows =  $alternativas->fetch(PDO::FETCH_ASSOC)){ ?> 
-                           <div >
-                                <label class="radio-inline">
-                                    <input type="radio" name="inlineRadioOptions" value="<?php  echo $rows['disciplina_assunto_questao_mutipla_escolha_text'] ?>">
-                                    <?php  echo $rows['disciplina_assunto_questao_mutipla_escolha_text'] ?>
-                                </label>
+                            <div class="form-group">
+                                <label for="IdQuestão">Id</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_id'] ?>" >
                             </div>
-                        <?php } ?>
-                    </div>
 
-                </form>
-        
-            </div>
-            <!-- end  row --> 
-        </div>
-        <!--edn container  -->
+                            <div class="form-group">
+                                <label for="IdQuestão">Nome</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_nome'] ?>" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="IdQuestão">Pergunta</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_pergunta'] ?>" >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="IdQuestão">Data Criação</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_creat_at'] ?>" >
+                            </div>
+
+                            <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+                            <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                            <?php if (isset($_SESSION['erro_msg_ALTERNATIVA'])) { ?>
+                               <div class="alert alert-danger" role="alert">
+                                  <i class="glyphicon glyphicon-alert"></i>
+                                  <?php 
+                                     // EXIBINDO MESSAGEM
+                                     echo $_SESSION['erro_msg_ALTERNATIVA']; 
+                                     // APAGANDO MESSAGEM DA SESSION
+                                     unset($_SESSION['erro_msg_ALTERNATIVA']);
+                                  ?>
+                               </div>
+                            <?php } ?>
+                             <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+
+                             <!-- ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+                                <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                                <?php if (isset($_SESSION['success_msg_ALTERNATIVA'])) { ?>
+                                   <div class="alert alert-success" role="alert">
+                                      <i class="glyphicon glyphicon-ok"></i>
+                                      <?php 
+                                         // EXIBINDO MESSAGEM
+                                         echo $_SESSION['success_msg_ALTERNATIVA']; 
+                                         // APAGANDO MESSAGEM DA SESSION
+                                         unset($_SESSION['success_msg_ALTERNATIVA']);
+                                      ?>
+                                   </div>
+                                <?php } ?>
+                             <!-- END ALERTA CASO TENHA PROBLEMA NO CADASTRO DA ALTERNATIVA -->
+
+
+                            <div class="form-group">
+                                <label for="IdQuestão">Alternativas</label>
+
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModalDisciplina">
+                                    Adicionar
+                                </button>      
+
+                                <?php while ( $rows =  $alternativas->fetch(PDO::FETCH_ASSOC)){ ?> 
+                                   <div >
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" value="<?php  echo $rows['disciplina_assunto_questao_mutipla_escolha_text'] ?>">
+                                            <?php  echo $rows['disciplina_assunto_questao_mutipla_escolha_text'] ?>
+                                        </label>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </form>
+                    </div><!-- end panel body-->
+                </div><!-- end panel -->       
+            </div><!-- end  row --> 
+        </div><!--edn container  -->
 
     <!-- TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
     <?php if ( $_SESSION['nivel_acesso'] == 2) { ?>
