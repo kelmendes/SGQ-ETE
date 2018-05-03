@@ -26,41 +26,43 @@
         <?php include './template/navbar.php'; ?>
         
         <div class="container">
-             <div class="row" >
+            <div class="row" >
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    </div><!-- end panel-heading -->
+                    <div class="panel-body">
 
-                <form class="form">
+                        <form class="form">
 
-                    <div class="form-group">
-                        <label for="IdQuestão">Id</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_id'] ?>" >
-                    </div>
+                            <div class="form-group">
+                                <label for="IdQuestão">Id</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_id'] ?>" >
+                            </div>
 
-                    <div class="form-group">
-                        <label for="IdQuestão">Nome</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_nome'] ?>" >
-                    </div>
+                            <div class="form-group">
+                                <label for="IdQuestão">Nome</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_nome'] ?>" >
+                            </div>
 
-                    <div class="form-group">
-                        <label for="IdQuestão">Pergunta</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_pergunta'] ?>" >
-                    </div>
+                            <div class="form-group">
+                                <label for="IdQuestão">Pergunta</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_pergunta'] ?>" >
+                            </div>
 
-                    <div class="form-group">
-                        <label for="IdQuestão">Data Criação</label>
-                        <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_creat_at'] ?>" >
-                    </div>
+                            <div class="form-group">
+                                <label for="IdQuestão">Data Criação</label>
+                                <input type="text" class="form-control" value="<?php echo $questao['disciplina_assunto_questao_creat_at'] ?>" >
+                            </div>
 
-                    <div class="form-group">
-                        <label for="IdQuestão">Resposta</label>
-                        <textarea  class="form-control" rows="2"></textarea>
-                    </div>
-
-                </form>
-        
-            </div>
-            <!-- end  row --> 
-        </div>
-        <!--edn container  -->
+                            <div class="form-group">
+                                <label for="IdQuestão">Resposta</label>
+                                <textarea  class="form-control" rows="2"></textarea>
+                            </div>
+                        </form><!-- end form questao dissertativa -->
+                    </div><!-- end panel-body -->
+                </div><!-- end panel-default -->
+            </div><!-- end  row --> 
+        </div><!--edn container  -->
 
 
     <!-- ADICIONANDO HEADER PADRÃO -->
