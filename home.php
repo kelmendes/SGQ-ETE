@@ -38,11 +38,6 @@
                                 </button>
                             <?php } ?>
                             <!-- END  TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
-
-                            <button type="button" onclick="Mudarestado('minhaDiv')">Mostrar / Esconder</button>
-
-
-
                         </div>
                         <div class="panel-body">
                             
@@ -112,7 +107,7 @@
                 <!-- end col-md-6 --> 
 
 
-                <div class="col-md-3" id="minhaDiv">
+                <div class="col-md-3">
 
                     <div class="panel panel-default" style="">
                         <div class="panel-heading" id="title-panel-select">
@@ -258,17 +253,7 @@
         <?php } ?>
         <!--END TESTANDO SE O USUARIO TEM PERMISSAO DE ADICIONAR DISCIPLINAS -->
 
-        <script type="text/javascript">
-            function Mudarestado(el) {
-                var display = document.getElementById(el).style.display;
-                if(display == "none")
-                    document.getElementById(el).style.display = 'block';
-                else
-                    document.getElementById(el).style.display = 'none';
-
-            }
-        </script>
-        <!-- ADICIONANDO HEADER PADRÃO -->
+        <!-- ADICIONANDO FOOTER PADRÃO -->
         <?php include './template/footer.php'; ?>
     </body>
 </html>
