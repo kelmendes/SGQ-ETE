@@ -5,6 +5,18 @@
     // ADICIONANDO A CLASS PARA CONEXAO COM BANCO DE DADOS
     require ('./class/configdb.php');
 
+    // COONEXAO COM DB TEMPORARIA 
+
+    // ATRIBUTOS DA CLASS PARA CONEXÃO 
+    $host = 'localhost';
+    $dbname = 'p1teste';
+    $user = 'root';
+    $password = '';
+
+    $conn = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+
+
+
     // COSTUMIZANDO O FOOTER
     Class myPDF extends FPDF{
         // ESTILO FOOTER
@@ -42,6 +54,41 @@
     $pdf->Cell(80,6,'Disciplina: ',0,1, 'L');
     $pdf->Cell(80,6,'Professor: ',0,0, 'L');
     $pdf->Cell(80,6,'Turma: ',0,1, 'L');
+
+
+
+    // CORPO DA PROVA 
+
+    // QUEBRA DE LINHA 
+    $pdf->Ln();
+    $pdf->Ln();
+
+    // TEMPLATE QUESTAO DISSERTATIVA
+    $pdf->SetFont('Arial','',11);
+    $pdf->Cell(10,6,'xx )',1,0, 'L');
+    $pdf->MultiCell(180, 4, utf8_decode('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae felis fringilla, dictum quam vel, tincidunt enim. Duis mollis mollis aliquam. Aliquam ullamcorper velit ligula, non ultricies risus congue vulputate. Etiam vitae viverra massa. Proin cursus diam tincidunt eleifend venenatis. Phasellus tincidunt eu libero sed tristique. Duis sed convallis magna. Nulla vitae sodales leo. Aenean vulputate nibh nunc, vitae iaculis elit sodales in. Ut a nibh tempor, egestas tortor quis posuere.') ,0,'J');
+    $pdf->Ln();
+    // EDN TEMPLATE QUESTAO DISSERTATIVA
+
+
+    // TEMPLATE QUESTAO MULTIPLA ESCOLHA
+    $pdf->SetFont('Arial','',11);
+    $pdf->Cell(10,6,'xx )',1,0, 'L');
+    $pdf->MultiCell(180, 4, utf8_decode('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae felis fringilla, dictum quam vel, tincidunt enim. Duis mollis mollis aliquam. Aliquam ullamcorper velit ligula, non ultricies risus congue vulputate. Etiam vitae viverra massa. Proin cursus diam tincidunt eleifend venenatis. Phasellus tincidunt eu libero sed tristique. Duis sed convallis magna. Nulla vitae sodales leo. Aenean vulputate nibh nunc, vitae iaculis elit sodales in. Ut a nibh tempor, egestas tortor quis posuere.') ,0,'J');
+    // ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
+    $pdf->Ln();
+    $pdf->Cell(10,6,'xx )',1,0, 'L');
+    $pdf->MultiCell(180, 4, utf8_decode('Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ut orci urna. Aenean quam neque, luctus eget laoreet vitae, consequat in orci. Donec ipsum sem, ultricies quis vulputate eget, egestas a ex posuere.') ,0,'J');
+    // END ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
+    $pdf->Ln();
+    // END  TEMPLATE QUESTAO MULTIPLA ESCOLHA
+    
+    
+
+    
+
+
+    // END CORPO DA PROVA 
 
 
     // EXIBINDO PDF
