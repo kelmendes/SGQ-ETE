@@ -7,7 +7,7 @@
 	{
 		// ATRIBUTOS DA CLASS PARA CONEXÃO 
 		var $host = 'localhost';
-		var $dbname = 'test';
+		var $dbname = 'p1teste';
 		var $user = 'root';
 		var $password = '';
 
