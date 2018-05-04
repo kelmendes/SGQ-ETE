@@ -33,7 +33,7 @@
     $pdf->AddPage();
 
     // ADICIONANDO LOGO
-    $pdf->Image('./imagem/logo_ETE.jpg',10,5,-1100);
+    $pdf->Image('./imagem/logo_ETE.jpg',10,5,-400);
     $pdf->Image('./imagem/logo_INTEGRAL.png',155,5,-160);
 
     // NOME ESCOLA
@@ -53,7 +53,9 @@
     $pdf->Cell(80,6,'Curso: ',0,0, 'L');
     $pdf->Cell(80,6,'Disciplina: ',0,1, 'L');
     $pdf->Cell(80,6,'Professor: ',0,0, 'L');
-    $pdf->Cell(80,6,'Turma: ',0,1, 'L');
+    $pdf->Cell(60,6,'Turma: ',0,0, 'L');
+    $pdf->Cell(12,6,'Data: ',0,0, 'L');
+    $pdf->Cell(32,6,'___ / ___ / _____ ',0,1, 'L');
 
 
 
@@ -62,6 +64,7 @@
     // QUEBRA DE LINHA 
     $pdf->Ln();
     $pdf->Ln();
+
 
     // TEMPLATE QUESTAO DISSERTATIVA
     $pdf->SetFont('Arial','',11);
