@@ -58,7 +58,7 @@
                                 </div>
                                 
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default">Print</button>
+                                    <a href="./gerar_prova_pdf.php" role="button" class="btn btn-default">Print</a>
                                 </div>
 
                             </div>
