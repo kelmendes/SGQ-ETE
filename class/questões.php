@@ -170,6 +170,24 @@
 
 		}
 
+		function dropQuestaoSelect( $prova_questoes_selecionadas_id, $user_id){
+			$star = $this->conn->prepare("
+				DELETE
+				FROM
+				    `prova_questoes_selecionadas`
+				WHERE
+				    prova_questoes_selecionadas_id = :prova_questoes_selecionadas_id
+				AND 
+					prova_questoes_selecionadas_user_id = :user_id ");
+
+			$star->bindValue(":prova_questoes_selecionadas_id", $prova_questoes_selecionadas_id, PDO::PARAM_INT);
+			$star->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+
+			$run = $star->execute();
+			return $star;
+
+		}
+
 
 
 
