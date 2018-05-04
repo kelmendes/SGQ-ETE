@@ -194,6 +194,7 @@
                                     $sql = "
                                     SELECT
                                         P.prova_questoes_selecionadas_id,
+                                        Q.disciplina_assunto_questao_id,
                                         Q.disciplina_assunto_questao_nome    
                                     FROM
                                         `prova_questoes_selecionadas` AS P
@@ -206,10 +207,10 @@
                                 ?>
                                 <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) { ?>
                                     <tr>
-                                        <td><?php echo $rows['prova_questoes_selecionadas_id']; ?></td>
+                                        <td><?php echo $rows['disciplina_assunto_questao_id']; ?></td>
                                         <td><?php echo $rows['disciplina_assunto_questao_nome'];  ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-xs btn-danger" role="button">
+                                            <a href="./function/questao_selecionar_deletar?id=<?php echo $rows['prova_questoes_selecionadas_id']; ?>" class="btn btn-xs btn-danger" role="button">
                                                 <span class="glyphicon glyphicon-trash"></span>
                                                 Unset
                                             </a>
