@@ -152,6 +152,27 @@
 
 		}
 
+		function setQuestaoSelect( $user_id, $questao_id ){
+			$star = $this->conn->prepare("
+				INSERT INTO `prova_questoes_selecionadas`(
+				    `prova_questoes_selecionadas_user_id`,
+				    `prova_questoes_selecionadas_disciplina_assunto_questao_id`
+				)
+				VALUES(
+				    :prova_questoes_selecionadas_user_id,
+				    :prova_questoes_selecionadas_disciplina_assunto_questao_id
+				)");	
+			$star->bindValue(":prova_questoes_selecionadas_user_id", $user_id, PDO::PARAM_INT);
+		    $star->bindValue(":prova_questoes_selecionadas_disciplina_assunto_questao_id", $questao_id, PDO::PARAM_INT);
+
+			$run = $star->execute();
+			return $star;
+
+		}
+
+
+
+
 
 	}
 
