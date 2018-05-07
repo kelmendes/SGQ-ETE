@@ -1,7 +1,8 @@
 <?php
     // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
     require './function/verificar_login.php';
-
+    require './function/verificar_acesso_admin.php';
+    
     // ADICIONANDO CLASS RESPONSAVEL POR LISTAR DISCIPLINAS 
     include './class/disciplina.php';
 
