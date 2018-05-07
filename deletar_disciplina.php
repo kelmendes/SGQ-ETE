@@ -2,7 +2,7 @@
     // VERIFICAR SE O USUARIO ESTA AUTENTICADO 
     require './function/verificar_login.php';
     require './function/verificar_acesso_admin.php';
-    
+
     // ADICIONANDO CLASS RESPONSAVEL POR LISTAR DISCIPLINAS 
     include './class/disciplina.php';
 
@@ -94,9 +94,9 @@
                                                 <td><?php echo $rows_disciplinas['disciplina_total_assunto']; ?></td>
                                                 <td><?php echo $rows_disciplinas['disciplina_create_at']; ?></td>
                                                 <td>
-                                                    <button class="btn btn-xs btn-danger">
+                                                    <a href="./function/disciplina_cadastro_questao_deletar?id=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="btn btn-xs btn-danger">
                                                         <span class="glyphicon glyphicon-trash"></span>
-                                                    </button>
+                                                    </a>
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
