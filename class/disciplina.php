@@ -60,6 +60,24 @@
 		}
 
 
+		// FUNCTION PARA CADASTRAR DISCIPLINA 
+		function dropDisciplinas($disciplina_id){
+			$star = $this->conn->prepare("
+				DELETE
+				FROM
+				    `disciplina`
+				WHERE
+				    	disciplina_id = :disciplina_id
+				   ");
+
+			$star->bindValue(":disciplina_id", $disciplina_id);
+
+			$run = $star->execute();
+			return $star;
+		}
+
+
+
 	}
 
 
