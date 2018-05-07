@@ -16,14 +16,13 @@
                             <ul class="dropdown-menu">
 
                                 <li>
-                                    <a href="">Disciplianas</a>
                                     <a href="./usuarios">Usuários</a>
                                 </li>
                                 
                                 <li role="separator" class="divider"></li>
 
                                 <li>
-                                    <a href="#">Drop - Discipliana</a>
+                                    <a href="deletar_disciplina">Deletar - Discipliana</a>
                                 </li>
                                 
                             </ul> 
