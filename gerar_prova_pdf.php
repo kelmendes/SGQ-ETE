@@ -1,15 +1,24 @@
 <?php
+    //  INICIANDO SESSAO 
+    session_start();
     // ADICIONANDO A CLASS PRONCIPAL DO FPDF
     require('./class/fpdf.php');
 
-    // ADICIONANDO A CLASS PARA CONEXAO COM BANCO DE DADOS
-    require ('./class/configdb.php');
+    // ADICIONANDO CLASS
+    require './class/questões.php';
+
+    // ESTANIANDO CLASS 
+    $questaD = new Questões();
+
+    // PEGANDO ID DO USUARIO 
+    $user_id = $_SESSION['id_usuario'];
+
 
     // COONEXAO COM DB TEMPORARIA 
 
     // ATRIBUTOS DA CLASS PARA CONEXÃO 
     $host = 'localhost';
-    $dbname = 'p1teste';
+    $dbname = 'teste2';
     $user = 'root';
     $password = '';
 
@@ -59,37 +68,63 @@
 
 
 
-    // CORPO DA PROVA 
+    // PEGAR QUESTOES SELECIONADAS PELO USUARIO 
+    $select_from_user = "SELECT * FROM prova_questoes_selecionadas AS S INNER JOIN disciplina_assunto_questao AS Q ON S.prova_questoes_selecionadas_disciplina_assunto_questao_id = Q.disciplina_assunto_questao_id WHERE S.prova_questoes_selecionadas_user_id = $user_id ";
 
+    // EXECUTANDO QUERY 
+    $select_from_user_resultado = $conn->query($select_from_user);
+
+    // CORPO DA PROVA 
     // QUEBRA DE LINHA 
     $pdf->Ln();
     $pdf->Ln();
 
+    // CONTAR QUESTAO 
+    $num_questao = 1;
 
-    // TEMPLATE QUESTAO DISSERTATIVA
-    $pdf->SetFont('Arial','',11);
-    $pdf->Cell(10,6,'xx )',1,0, 'L');
-    $pdf->MultiCell(180, 4, utf8_decode('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae felis fringilla, dictum quam vel, tincidunt enim. Duis mollis mollis aliquam. Aliquam ullamcorper velit ligula, non ultricies risus congue vulputate. Etiam vitae viverra massa. Proin cursus diam tincidunt eleifend venenatis. Phasellus tincidunt eu libero sed tristique. Duis sed convallis magna. Nulla vitae sodales leo. Aenean vulputate nibh nunc, vitae iaculis elit sodales in. Ut a nibh tempor, egestas tortor quis posuere.') ,0,'J');
-    $pdf->Ln();
-    // EDN TEMPLATE QUESTAO DISSERTATIVA
+    while ( $rows_select_from_user = $select_from_user_resultado->fetch(PDO::FETCH_ASSOC) ) {
+        
 
+        // TESTAR QUAL TIPO DE QUESTÃO PARA PODER FAZER A QUERY 
+        if ( $rows_select_from_user['disciplina_assunto_questao_mutipla_escolha'] == 0){
 
-    // TEMPLATE QUESTAO MULTIPLA ESCOLHA
-    $pdf->SetFont('Arial','',11);
-    $pdf->Cell(10,6,'xx )',1,0, 'L');
-    $pdf->MultiCell(180, 4, utf8_decode('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae felis fringilla, dictum quam vel, tincidunt enim. Duis mollis mollis aliquam. Aliquam ullamcorper velit ligula, non ultricies risus congue vulputate. Etiam vitae viverra massa. Proin cursus diam tincidunt eleifend venenatis. Phasellus tincidunt eu libero sed tristique. Duis sed convallis magna. Nulla vitae sodales leo. Aenean vulputate nibh nunc, vitae iaculis elit sodales in. Ut a nibh tempor, egestas tortor quis posuere.') ,0,'J');
-    // ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
-    $pdf->Ln();
-    $pdf->Cell(10,6,'xx )',1,0, 'L');
-    $pdf->MultiCell(180, 4, utf8_decode('Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus ut orci urna. Aenean quam neque, luctus eget laoreet vitae, consequat in orci. Donec ipsum sem, ultricies quis vulputate eget, egestas a ex posuere.') ,0,'J');
-    // END ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
-    $pdf->Ln();
-    // END  TEMPLATE QUESTAO MULTIPLA ESCOLHA
-    
-    
+            // TEMPLATE QUESTAO DISSERTATIVA
+            $pdf->SetFont('Arial','',11);
+            $pdf->Cell(10,6, $num_questao . " - " ,0,0, 'L');
+            $num_questao ++;
+            $pdf->MultiCell(180, 4, utf8_decode( $rows_select_from_user['disciplina_assunto_questao_pergunta']) ,0,'J');
+            $pdf->Ln();
+            // EDN TEMPLATE QUESTAO DISSERTATIVA
 
-    
+        } elseif ( $rows_select_from_user['disciplina_assunto_questao_mutipla_escolha'] == 1) {
 
+            // TEMPLATE QUESTAO MULTIPLA ESCOLHA
+            $pdf->SetFont('Arial','',11);
+            $pdf->Cell(10,6, $num_questao . " - " , 0,0, 'L');
+            $num_questao ++;
+            $pdf->MultiCell(180, 4, utf8_decode($rows_select_from_user['disciplina_assunto_questao_pergunta']) ,0,'J');
+
+            $alternativas = $questaD->getQuestaoMultiEscolhaAlternativas($rows_select_from_user['disciplina_assunto_questao_id']);
+
+            // ARRAY COM ALFABETO 
+            $letras_questao = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r','s','t','u','v'];
+            $temp_posicao_letra = 0;
+            while ( $rows_alternativas =  $alternativas->fetch(PDO::FETCH_ASSOC)){ 
+                // ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
+                $pdf->Ln();
+                // ESPACO IDENTACAO
+                $pdf->Cell(10,6,'',0,0, 'L');
+                $pdf->Cell(10,6,$letras_questao[$temp_posicao_letra] . ' )',0,0, 'L');
+                $temp_posicao_letra ++;
+                // CONSULTANDO AS ALTERNATIVAS 
+                $pdf->MultiCell(170, 4, utf8_decode($rows_alternativas['disciplina_assunto_questao_mutipla_escolha_text']) ,0,'J');
+                // END ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
+                // END  TEMPLATE QUESTAO MULTIPLA ESCOLHA
+            } 
+            $pdf->Ln();
+
+        }
+    }
 
     // END CORPO DA PROVA 
 
