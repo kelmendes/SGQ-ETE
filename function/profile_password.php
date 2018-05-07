@@ -13,8 +13,15 @@
 	if ($user_senha_new != null and $user_senha_confirm != null and $user_id != null){
 
 		// VERIFICANDO TAMANHO DOS CAMPOS
-		if (strlen($user_senha_new) > 20 or strlen($user_senha_confirm) > 20){
+		if (strlen($user_senha_new) > 20 or strlen($user_senha_confirm) > 20 ){
 			$_SESSION['erro_msg_PASSWORD'] = "Sua senha ultrapassa o limite aceito pelo sistema!";
+			header('Location: ../profile');
+			exit;
+		}
+
+		// VERIFICANDO TAMANHO DOS CAMPOS
+		if (strlen($user_senha_new) < 8 ){
+			$_SESSION['erro_msg_PASSWORD'] = "Sua senha não atinge o tamanho mínimo solicitado pelo sistema!";
 			header('Location: ../profile');
 			exit;
 		}

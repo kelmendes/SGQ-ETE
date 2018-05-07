@@ -20,6 +20,13 @@
 			exit;
 		}
 
+		// VERIFICANDO TAMANHO DOS CAMPOS
+		if (strlen($user_senha_new) < 8 ){
+			$_SESSION['erro_msg_PASSWORD'] = "Sua senha não atinge o tamanho mínimo solicitado pelo sistema!";
+			header($text);
+			exit;
+		}
+
 		// VERIFICANDO SE AS SENHAS SÃO IGUAIS
 		if ($user_senha_new !=  $user_senha_confirm){
 			$_SESSION['erro_msg_PASSWORD'] = "As senhas informadas não são iguais!";
