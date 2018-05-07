@@ -118,12 +118,12 @@
                                                     <?php 
                                                         if ($rows_questões['disciplina_assunto_questao_mutipla_escolha'] == 0){
                                                             echo '
-                                                            <a href="#" class="btn btn-xs btn-default" role="button">
+                                                            <a href="#" class="btn btn-sm btn-default" role="button">
                                                                 <span class="glyphicon glyphicon-list"></span>
                                                             </a>';
                                                         } else {
                                                             echo '
-                                                            <a href="#" class="btn btn-xs btn-default" role="button">
+                                                            <a href="#" class="btn btn-sm btn-default" role="button">
                                                                 <span class="glyphicon glyphicon-ok-circle"></span>
                                                             </a>';
                                                         }
@@ -131,26 +131,20 @@
                                                 </td>
                                                 <td>
                                                     <?php  if ($rows_questões['disciplina_assunto_questao_mutipla_escolha'] == 0){ ?>
-                                                        <a href="./questao_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">
+                                                        <a href="./questao_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-sm btn-primary" role="button">
                                                             <span class="glyphicon glyphicon-eye-open"></span>
-                                                            View
                                                         </a>
                                                     <?php } else { ?>
-                                                        <a href="./questao_multi_escolha?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-primary" role="button">
+                                                        <a href="./questao_multi_escolha?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-sm btn-primary" role="button">
                                                             <span class="glyphicon glyphicon-eye-open"></span>
-                                                            View
                                                         </a>
                                                     <?php } ?>  
-                                                    <a href="./function/questao_selecionar?user_id=<?php echo $id_user; ?>&questao_id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-xs btn-success" role="button">
+                                                    <a href="./function/questao_selecionar?user_id=<?php echo $id_user; ?>&questao_id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-sm btn-success" role="button">
                                                         <span class="glyphicon glyphicon-plus"></span>
-                                                        Select
                                                     </a>
-                                                    <a href="#" class="btn btn-xs btn-danger" role="button">
+                                                    <a href="#" class="btn btn-sm btn-danger" role="button">
                                                         <span class="glyphicon glyphicon-trash"></span>
-                                                        Drop
                                                     </a>
-
-                                                    <a href="#my_modal" data-toggle="modal" data-book-id="<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>">Open Modal</a>
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
@@ -225,36 +219,8 @@
     </div>
 
     <!--edn container  -->
-    <?php } ?>
+    <?php } ?> 
 
-    <div class="modal" id="my_modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title">Modal header</h4>
-                </div> <!-- end modal-header -->
-
-                <div class="modal-body">
-                    <p>some content</p>
-                    <input type="text" name="bookId" value=""/>
-                </div><!-- end modal-body -->
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div><!-- end modal-footer -->
-
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        $('#my_modal').on('show.bs.modal', function(e) {
-            var bookId = $(e.relatedTarget).data('book-id');
-            $(e.currentTarget).find('input[name="bookId"]').val(bookId);
-        });
-    </script>
     <!-- ADICIONANDO HEADER PADRÃO -->
     <?php include './template/footer.php'; ?>
     </body>

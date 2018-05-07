@@ -42,7 +42,6 @@
                                         <td>
                                             <a href="./function/questao_selecionar_deletar?id=<?php echo $rows['prova_questoes_selecionadas_id']; ?>" class="btn btn-xs btn-danger" role="button">
                                                 <span class="glyphicon glyphicon-trash"></span>
-                                                Unset
                                             </a>
                                         </td>
                                     </tr>
