@@ -23,6 +23,7 @@
 				    A.disciplina_id,
 				    A.disciplina_codigo,
 				    A.disciplina_nome,
+				    A.disciplina_create_at,
 				    (SELECT COUNT(*) 
 				     FROM disciplina_assunto
 				     WHERE disciplina_assunto_id_disciplina = A.disciplina_id ) AS disciplina_total_assunto
