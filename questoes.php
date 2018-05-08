@@ -132,17 +132,21 @@
                                                 <td>
                                                     <?php  if ($rows_questões['disciplina_assunto_questao_mutipla_escolha'] == 0){ ?>
                                                         <a href="./questao_dissertativa?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-sm btn-primary" role="button">
+                                                            <!-- BUTTON VIEW DISSERTATIVA -->
                                                             <span class="glyphicon glyphicon-eye-open"></span>
                                                         </a>
                                                     <?php } else { ?>
                                                         <a href="./questao_multi_escolha?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-sm btn-primary" role="button">
+                                                            <!-- BUTTON VIEW ALTERNATIVA -->
                                                             <span class="glyphicon glyphicon-eye-open"></span>
                                                         </a>
                                                     <?php } ?>  
                                                     <a href="./function/questao_selecionar?user_id=<?php echo $id_user; ?>&questao_id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-sm btn-success" role="button">
+                                                        <!-- BUTTON SELECT QUESTAO -->
                                                         <span class="glyphicon glyphicon-plus"></span>
                                                     </a>
-                                                    <a href="#" class="btn btn-sm btn-danger" role="button">
+                                                    <a href="./function/disciplina_cadastro_questao_deletar" class="btn btn-sm btn-danger" role="button">
+                                                        <!-- BUTTON DROP QUESTAO -->
                                                         <span class="glyphicon glyphicon-trash"></span>
                                                     </a>
                                                 </td>
