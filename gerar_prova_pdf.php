@@ -114,10 +114,10 @@
                 $pdf->Ln();
                 // ESPACO IDENTACAO
                 $pdf->Cell(10,6,'',0,0, 'L');
-                $pdf->Cell(10,6,$letras_questao[$temp_posicao_letra] . ' )',0,0, 'L');
+                $pdf->Cell(9, 4,$letras_questao[$temp_posicao_letra] . ' )',0,0, 'L');
                 $temp_posicao_letra ++;
                 // CONSULTANDO AS ALTERNATIVAS 
-                $pdf->MultiCell(170, 4, utf8_decode($rows_alternativas['disciplina_assunto_questao_mutipla_escolha_text']) ,0,'J');
+                $pdf->MultiCell(170, 3, utf8_decode($rows_alternativas['disciplina_assunto_questao_mutipla_escolha_text']) ,0,'J');
                 // END ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
                 // END  TEMPLATE QUESTAO MULTIPLA ESCOLHA
             } 
