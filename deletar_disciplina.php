@@ -94,7 +94,7 @@
                                                 <td><?php echo $rows_disciplinas['disciplina_total_assunto']; ?></td>
                                                 <td><?php echo $rows_disciplinas['disciplina_create_at']; ?></td>
                                                 <td>
-                                                    <a href="./function/disciplina_cadastro_questao_deletar?id=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="btn btn-xs btn-danger">
+                                                    <a href="./function/disciplina_cadastro_deletar?id=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="btn btn-xs btn-danger">
                                                         <span class="glyphicon glyphicon-trash"></span>
                                                     </a>
                                                 </td>
