@@ -29,7 +29,7 @@
 
         <div class="container-fluid">
             <div class="row" >
-                <div class="col-md-11">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-danger">
                         <div class="panel-heading" id="title-panel">
                             Disciplinas
