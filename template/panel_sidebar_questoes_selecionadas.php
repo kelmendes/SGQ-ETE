@@ -53,11 +53,11 @@
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
 
                                 <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default">Clear All</button>
+                                    <a href="./function/questao_selecionar_deletar_tudo" role="button" class="btn btn-default">Clear All</a>
                                 </div>
                                 
                                 <div class="btn-group" role="group">
-                                    <a href="./gerar_prova_pdf.php" role="button" class="btn btn-default">Print</a>
+                                    <a href="./gerar_prova_pdf" role="button" class="btn btn-default">Print</a>
                                 </div>
 
                             </div>
