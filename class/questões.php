@@ -188,6 +188,20 @@
 
 		}
 
+		function dropQuestao( $questao_id ){
+			$star = $this->conn->prepare("
+				DELETE
+				FROM
+				    `disciplina_assunto_questao`
+				WHERE
+				    disciplina_assunto_questao_id = :disciplina_assunto_questao_id  ");
+
+			$star->bindValue(":disciplina_assunto_questao_id", $questao_id, PDO::PARAM_INT);
+
+			$run = $star->execute();
+			return $star;
+		}
+
 
 
 

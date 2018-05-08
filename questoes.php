@@ -145,7 +145,7 @@
                                                         <!-- BUTTON SELECT QUESTAO -->
                                                         <span class="glyphicon glyphicon-plus"></span>
                                                     </a>
-                                                    <a href="./function/disciplina_cadastro_questao_deletar" class="btn btn-sm btn-danger" role="button">
+                                                    <a href="./function/disciplina_cadastro_questao_deletar?id=<?php echo ($rows_questões['disciplina_assunto_questao_id']); ?>" class="btn btn-sm btn-danger" role="button">
                                                         <!-- BUTTON DROP QUESTAO -->
                                                         <span class="glyphicon glyphicon-trash"></span>
                                                     </a>
