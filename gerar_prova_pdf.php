@@ -1,6 +1,7 @@
 <?php
     //  INICIANDO SESSAO 
     session_start();
+
     // ADICIONANDO A CLASS PRONCIPAL DO FPDF
     require('./class/fpdf.php');
 
@@ -107,7 +108,7 @@
             $alternativas = $questaD->getQuestaoMultiEscolhaAlternativas($rows_select_from_user['disciplina_assunto_questao_id']);
 
             // ARRAY COM ALFABETO 
-            $letras_questao = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r','s','t','u','v'];
+            $letras_questao = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','p','q','r','s','t','u','v','w','x','y','z'];
             $temp_posicao_letra = 0;
             while ( $rows_alternativas =  $alternativas->fetch(PDO::FETCH_ASSOC)){ 
                 // ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
