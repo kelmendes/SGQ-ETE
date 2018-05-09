@@ -60,7 +60,7 @@
 		}
 
 
-		// FUNCTION PARA CADASTRAR DISCIPLINA 
+		// FUNCTION DELETAR UMA DISCIPLINA
 		function dropDisciplinas($disciplina_id){
 			$star = $this->conn->prepare("
 				DELETE

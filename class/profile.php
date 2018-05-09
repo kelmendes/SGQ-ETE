@@ -28,7 +28,7 @@
 		}
 
 		
-		// FUNCTION PARA CADASTRAR NOVO USUARIO 
+		// FUNCTION ALTERAR INFORMAÇÕES DE UM PERFIL PELO PROPRIO USUARIO
 		function updateProfile($user_id, $user_nome, $user_email){
 			$star = $this->conn->prepare("
 				UPDATE `user` SET 
@@ -49,7 +49,7 @@
 		}
 
 		
-		// FUNCTION PARA APAGAR USUARIO 
+		// FUNCTION PARA ATUALIZAR SENHA PELO PROPRIO USUARIO 
 		function updatePassword($user_id, $user_senha){
 			$star = $this->conn->prepare("
 				UPDATE `user` SET 

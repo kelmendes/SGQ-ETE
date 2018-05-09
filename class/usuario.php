@@ -39,7 +39,7 @@
 			return $run;
 		}
 
-		// LIST INFO FROM USER
+		// LISTAR INFORMAÇÕES DE UM USUÁRIO ESPECÍFICO 
 		function listInfoUser($user_id){
 			$star = $this->conn->prepare("SELECT * FROM user WHERE user_id = :user_id");
 			$star->bindValue(":user_id", $user_id, PDO::PARAM_INT);
@@ -49,7 +49,7 @@
 			return $rs;
 		}
 
-		// FUNCTION PARA CADASTRAR NOVO USUARIO 
+		// FUNCTION ATUALIZAR DADOS DE UM USUÁRIO
 		function updateUser($user_id, $user_matricula, $user_nome, $user_email, $user_role){
 			$star = $this->conn->prepare("
 				UPDATE `user` SET `user_matricula`= :user_matricula,`user_nome`=:user_nome,`user_email`=:user_email, `user_role`= :user_role,`user_update_at`= CURRENT_TIMESTAMP() WHERE `user_id`= :user_id ");
@@ -64,7 +64,7 @@
 			return $run;
 		}
 
-		// FUNCTION PARA CADASTRAR NOVO USUARIO 
+		// FUNCTION ATUALIZAR SENHA DO USUÁRIO
 		function updateUserPassword($user_id, $user_senha){
 			$star = $this->conn->prepare("
 				UPDATE `user` SET 

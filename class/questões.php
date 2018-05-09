@@ -16,7 +16,7 @@
 			$this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 		}
 		
-		// FUNCTION PARA PEGAR INFORMACOES QUE SAO EXIBIDAS NA PAGINA  
+		// FUNCTION PARA PEGAR INFORMACOES DE UM ASSUNTO E MOSTRAR NA PAGINA  DE 
 		function getInfoAssunto($disciplina_assunto_id){
 
 			$star = $this->conn->prepare("
@@ -43,7 +43,7 @@
 			return $rs;
 		}
 
-
+		// FUNCTION PARA PEGAR QUESTÕES DE UM DETERMINADO ASSUNTO 
 		function getQuestoes($disciplina_assunto_id){
 			$star = $this->conn->prepare("
 				SELECT 
@@ -59,6 +59,7 @@
 
 		}
 
+		// FUNCTION PARA PEGAR INFORMAÇÕES DE UMA QUESTÃO DISSERTATIVA
 		function getQuestaoDissertativa($disciplina_assunto_questao_id){
 			$star = $this->conn->prepare("
 				SELECT
@@ -74,6 +75,7 @@
 			return $rs;
 		}
 
+		// FUNCTION PEGAR INFORMAÇÕES DE UMA MULTIPLA ESCOLHA
 		function getQuestaoMultiEscolha($disciplina_assunto_questao_id){
 			$star = $this->conn->prepare("
 				SELECT
@@ -90,6 +92,7 @@
 
 		}
 
+		// FUNCTION PEGAR AS ALTERNATIVAS DA QUESTÃO DE MULTIPLA ESCOLHA
 		function getQuestaoMultiEscolhaAlternativas($disciplina_assunto_questao_id){
 			$star = $this->conn->prepare("
 				SELECT
@@ -107,7 +110,7 @@
 
 		}
 
-
+		// CADASTRO DE QUESTÃO 
 		function newQuestao($id_assunto, $mutipla_escolha, $questao_nome, $questao_pergunta){
 			$star = $this->conn->prepare("
 				INSERT INTO `disciplina_assunto_questao`(
@@ -134,6 +137,7 @@
 
 		}
 
+		// CADASTRO DE ALTERNATIVAS DE QUESTÃO DE MULTIPLA ESCOLHA 	
 		function newQuestaoAlternativa( $questao_id, $questao_mutipla_escolha_text ){
 			$star = $this->conn->prepare("
 				INSERT INTO `disciplina_assunto_questao_mutipla_escolha`(
@@ -152,6 +156,7 @@
 
 		}
 
+		// FUNCTION PARA ADICIONAR A QUESTÃO NA TABELA DE SELECIONADA PELO USUÁRIO 
 		function setQuestaoSelect( $user_id, $questao_id ){
 			$star = $this->conn->prepare("
 				INSERT INTO `prova_questoes_selecionadas`(
@@ -170,6 +175,7 @@
 
 		}
 
+		// FUNCTION PARA REMOVER UMA QUESTÃO DAS QUESTÕES QUE FORAM SELECIONADAS 
 		function dropQuestaoSelect( $prova_questoes_selecionadas_id, $user_id){
 			$star = $this->conn->prepare("
 				DELETE
@@ -188,6 +194,7 @@
 
 		}
 
+		// REMOVER TODAS AS QUESTÕES SELECIONDAS PELO USUÁRIO 
 		function dropQuestaoSelectAll( $user_id ){
 			$star = $this->conn->prepare("
 				DELETE
@@ -203,6 +210,7 @@
 
 		}
 
+		// APAGANDO UMA QUESTÃO DO BANCO DE DADOS 
 		function dropQuestao( $questao_id ){
 			$star = $this->conn->prepare("
 				DELETE
