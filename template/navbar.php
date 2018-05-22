@@ -22,7 +22,7 @@
                                 <li role="separator" class="divider"></li>
 
                                 <li>
-                                    <a href="deletar_disciplina">Deletar - Discipliana</a>
+                                    <a href="deletar_disciplina">Disciplianas</a>
                                 </li>
                                 
                             </ul> 
