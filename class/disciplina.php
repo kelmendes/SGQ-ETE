@@ -94,7 +94,7 @@
 			$star->bindValue(":disciplina_id", $disciplina_id);
 
 			$run = $star->execute();
-			return $star;
+			return $run;
 		}
 
 

@@ -21,9 +21,11 @@
 
 
 		// SE CADASTRADO COM SUCESSO RETORNARA TRUE E CAIRA NA CONDICAO QUE DEIXARA A MENSAGEM
-		//if($$resultado_selecionar_questão){
-		//	$_SESSION['success_msg_SELECIONAR_QUESTAO'] = "Disciplina cadastrada com sucesso!";
-		//}
+		if($resultado_deletar_disciplina){
+			$_SESSION['success_msg_DELETAR_QUESTAO'] = "Disciplina deletada com sucesso!";
+		}else{
+			$_SESSION['erro_msg_DELETAR_QUESTAO'] = "Disciplina não foi deletada com sucesso!";
+		}
 
 
 	}
