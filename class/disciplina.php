@@ -34,6 +34,27 @@
 			$run = $star->execute();
 			return $star;
 		}
+        
+        
+        
+        // FUNCTION PARA LISTAR DISCIPLINAS 
+		function listDisciplinasUpdate($id){
+			$star = $this->conn->prepare("
+				SELECT
+				    *
+				FROM
+				    disciplina AS A
+                WHERE 
+                    A.disciplina_id = :disciplina_id
+			    ");
+            
+            
+            $star->bindValue(":disciplina_id", $id);
+        
+            $run = $star->execute();
+			$rs = $star->fetch(PDO::FETCH_ASSOC);
+			return $rs;
+		}
 
 
 		// FUNCTION PARA CADASTRAR DISCIPLINA 

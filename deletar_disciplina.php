@@ -97,6 +97,13 @@
                                                     <a href="./function/disciplina_cadastro_deletar?id=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="btn btn-xs btn-danger">
                                                         <span class="glyphicon glyphicon-trash"></span>
                                                     </a>
+                                                    
+                                                    
+                                                    <a href="./disciplina_update?id=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="btn btn-xs btn-info">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </a>
+                                                    
+                                                    
                                                 </td>
                                             </tr>
                                             <!-- END parte a ser repetida no while -->
