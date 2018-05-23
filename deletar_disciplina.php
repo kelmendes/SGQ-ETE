@@ -44,14 +44,14 @@
 
                             <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA -->
                                 <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
-                                <?php if (isset($_SESSION['erro_msg_DELETAR_QUESTAO'])) { ?>
+                                <?php if (isset($_SESSION['erro_msg_DELETAR_DISCIPLINA'])) { ?>
                                    <div class="alert alert-danger" role="alert">
                                       <i class="glyphicon glyphicon-alert"></i>
                                       <?php 
                                          // EXIBINDO MESSAGEM
-                                         echo $_SESSION['erro_msg_DELETAR_QUESTAO']; 
+                                         echo $_SESSION['erro_msg_DELETAR_DISCIPLINA']; 
                                          // APAGANDO MESSAGEM DA SESSION
-                                         unset($_SESSION['erro_msg_DELETAR_QUESTAO']);
+                                         unset($_SESSION['erro_msg_DELETAR_DISCIPLINA']);
                                       ?>
                                    </div>
                                 <?php } ?>
@@ -59,14 +59,14 @@
 
                             <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DE DADOS DA CONTA -->
                                 <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
-                                <?php if (isset($_SESSION['success_msg_DELETAR_QUESTAO'])) { ?>
+                                <?php if (isset($_SESSION['success_msg_DELETAR_DISCIPLINA'])) { ?>
                                    <div class="alert alert-success" role="alert">
                                       <i class="glyphicon glyphicon-ok"></i>
                                       <?php 
                                          // EXIBINDO MESSAGEM
-                                         echo $_SESSION['success_msg_DELETAR_QUESTAO']; 
+                                         echo $_SESSION['success_msg_DELETAR_DISCIPLINA']; 
                                          // APAGANDO MESSAGEM DA SESSION
-                                         unset($_SESSION['success_msg_DELETAR_QUESTAO']);
+                                         unset($_SESSION['success_msg_DELETAR_DISCIPLINA']);
                                       ?>
                                    </div>
                                 <?php } ?>
@@ -101,6 +101,10 @@
                                                     
                                                     <a href="./disciplina_update?id=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="btn btn-xs btn-info">
                                                         <span class="glyphicon glyphicon-pencil"></span>
+                                                    </a>
+
+                                                    <a href="./disciplina_assunto?id=<?php echo $rows_disciplinas['disciplina_id']; ?>" class="btn btn-xs btn-primary">
+                                                        <i class="glyphicon glyphicon-th-list"> Assuntos</i>
                                                     </a>
                                                     
                                                     
