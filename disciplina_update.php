@@ -47,26 +47,56 @@
                      
                      <!-- panel body -->
                      <div class="panel-body">
+
+                        <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DOS DADOS -->
+                            <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                            <?php if (isset($_SESSION['erro_msg_ATUALIZAR_DISCIPLINA'])) { ?>
+                               <div class="alert alert-danger" role="alert">
+                                  <i class="glyphicon glyphicon-alert"></i>
+                                  <?php 
+                                     // EXIBINDO MESSAGEM
+                                     echo $_SESSION['erro_msg_ATUALIZAR_DISCIPLINA']; 
+                                     // APAGANDO MESSAGEM DA SESSION
+                                     unset($_SESSION['erro_msg_ATUALIZAR_DISCIPLINA']);
+                                  ?>
+                               </div>
+                            <?php } ?>
+                         <!-- END ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DOS DADOS  -->
+
+                         <!-- ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DOS DADOS -->
+                            <!-- TESTAR SE SESSION ERRO LOGIN EXISTE -->
+                            <?php if (isset($_SESSION['success_msg_ATUALIZAR_DISCIPLINA'])) { ?>
+                               <div class="alert alert-success" role="alert">
+                                  <i class="glyphicon glyphicon-ok"></i>
+                                  <?php 
+                                     // EXIBINDO MESSAGEM
+                                     echo $_SESSION['success_msg_ATUALIZAR_DISCIPLINA']; 
+                                     // APAGANDO MESSAGEM DA SESSION
+                                     unset($_SESSION['success_msg_ATUALIZAR_DISCIPLINA']);
+                                  ?>
+                               </div>
+                            <?php } ?>
+                         <!-- END ALERTA CASO TENHA PROBLEMA NA ATUALIZACAO DOS DADOS  -->
                          
                         <!-- form atualizar -->
-						<form action="#" method="POST">
+						<form action="./function/disciplina_cadastro_atualizar" method="POST">
 							<div class="form-group">
-								<input type="text" class="form-control hidden" placeholder="Identificação Disciplina" value="<?php echo $resultado_disciplina['disciplina_id']; ?>" readonly>
+								<input type="text" class="form-control hidden" placeholder="Identificação Disciplina" value="<?php echo $resultado_disciplina['disciplina_id']; ?>" readonly name="disciplina_id">
 						  	</div>
 							
 							<div class="form-group">
 								<label for="labelNomeDisciplina">Nome Disciplina</label>
-								<input type="text" class="form-control" placeholder="Nome Disciplina" value="<?php echo $resultado_disciplina['disciplina_nome']; ?>" maxlength="70" required>
+								<input type="text" class="form-control" placeholder="Nome Disciplina" value="<?php echo $resultado_disciplina['disciplina_nome']; ?>" maxlength="70" required name="disciplina_nome">
 						  	</div>
 							
 							<div class="form-group">
 								<label for="labelNomeDisciplina">Nome Disciplina - Abreviado</label>
-								<input type="text" class="form-control" placeholder="Nome Abreviado" value="<?php echo $resultado_disciplina['disciplina_nome']; ?>" maxlength="15" required>
+								<input type="text" class="form-control" placeholder="Nome Abreviado" value="<?php echo $resultado_disciplina['disciplina_nome_abreviacao']; ?>" maxlength="15" required name="disciplina_abreviacao">
 						  	</div>
 							
 							<div class="form-group">
 								<label for="labelAbreviacaoDisciplina">Código Disciplina</label>
-								<input type="text" class="form-control" placeholder="Código Disciplina" value="<?php echo $resultado_disciplina['disciplina_nome_abreviacao']; ?>" maxlength="11" required>
+								<input type="text" class="form-control" placeholder="Código Disciplina" value="<?php echo $resultado_disciplina['disciplina_codigo']; ?>" maxlength="11" required name="disciplina_codigo">
 						  	</div>
 								
                      
@@ -74,7 +104,7 @@
                      
                      <!-- panel footer -->
                      <div class="panel-footer">
-                        <input type="submit" value="Atualizar" class="btn btn-success">
+                        <input type="submit" value="Atualizar" class="btn btn-success" ">
                         <input type="reset" value="Limpar" class="btn btn-primary">
 						</form><!-- end form atualizar -->
                       </div><!-- end panel footer -->

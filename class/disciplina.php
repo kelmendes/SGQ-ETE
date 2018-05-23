@@ -98,6 +98,33 @@
 		}
 
 
+		// ATUALIZAR DISCIPLINA 
+		function updateDisciplina( $disciplina_id, $disciplina_nome, $disciplina_nome_abreviacao, $disciplina_codigo ){
+			$star = $this->conn->prepare("
+				UPDATE
+				    `disciplina`
+				SET
+				    `disciplina_codigo` = :disciplina_codigo,
+				    `disciplina_nome` = :disciplina_nome,
+				    `disciplina_nome_abreviacao` = :disciplina_nome_abreviacao,
+				    `disciplina_update_atdisciplina_update_at` = CURRENT_TIMESTAMP() 
+				WHERE
+				    `disciplina_id` = :disciplina_id
+					");
+
+			$star->bindValue(":disciplina_id", $disciplina_id);
+			$star->bindValue(":disciplina_codigo", $disciplina_codigo);
+			$star->bindValue(":disciplina_nome", $disciplina_nome);
+			$star->bindValue(":disciplina_nome_abreviacao", $disciplina_nome_abreviacao);
+
+
+			$run = $star->execute();
+			return $star;
+
+
+		}
+
+
 
 	}
 
