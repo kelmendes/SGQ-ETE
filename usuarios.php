@@ -113,10 +113,14 @@
                                                 <td><?php echo ($rows_usuarios['user_create_at']); ?></td>
                                                 <td><?php echo ($rows_usuarios['user_update_at']); ?></td>
                                                 <td>
-                                                    <a href="./usuarios_edit?user=<?php echo ($rows_usuarios['user_id']); ?>" class="btn btn-primary btn-xs">Editar</a>
+                                                    <a href="./usuarios_edit?user=<?php echo ($rows_usuarios['user_id']); ?>" class="btn btn-primary btn-xs">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </a>
 
                                                     <!-- USUARIO FORM COM DADOS OCULTOS PARA USAR METHOD POST -->
-                                                    <a class="btn btn-danger btn-xs" href="./function/usuario_cadastro_deletar?user_id=<?php echo ($rows_usuarios['user_id']); ?>"> Deletar </a>
+                                                    <a class="btn btn-danger btn-xs" href="./function/usuario_cadastro_deletar?user_id=<?php echo ($rows_usuarios['user_id']); ?>">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                    </a>
 
 
                                                 </td>
