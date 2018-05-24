@@ -32,7 +32,7 @@
                         <div class="panel-heading" id="title-panel">
                             Usuários
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#myModal">
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
                                 Adicionar Usuário
                             </button>
                         </div>
