@@ -116,12 +116,8 @@
                                                     <a href="./usuarios_edit?user=<?php echo ($rows_usuarios['user_id']); ?>" class="btn btn-primary btn-xs">Editar</a>
 
                                                     <!-- USUARIO FORM COM DADOS OCULTOS PARA USAR METHOD POST -->
-                                                    <form method="POST" action="./function/usuario_cadastro_deletar">
-                                                        
-                                                        <input type="text" name="user_id" value="<?php echo ($rows_usuarios['user_id']); ?>" hidden>
-                                                        <input type="submit" class="btn btn-danger btn-xs" value="Deletar">
+                                                    <a class="btn btn-danger btn-xs" href="./function/usuario_cadastro_deletar?user_id=<?php echo ($rows_usuarios['user_id']); ?>"> Deletar </a>
 
-                                                    </form>
 
                                                 </td>
                                             </tr>

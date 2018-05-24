@@ -6,7 +6,7 @@
 	include '../class/usuario.php';
 
 	// PEGANDO VALORES PASSADO PELO FORMULARIO 
-	$user_id = (isset($_POST['user_id']))? $_POST['user_id'] : null;
+	$user_id = (isset($_GET['user_id']))? $_GET['user_id'] : null;
 
 	// ESTANCIANDO A CLASS
 	$usuario = new Usuario();
