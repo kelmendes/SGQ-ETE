@@ -43,6 +43,7 @@
 				SELECT
 				    S.disciplina_assunto_id,
 				    S.disciplina_assunto_nome,
+				    S.disciplina_assunto_create_at,
 				    (SELECT COUNT(*) 
 				     FROM disciplina_assunto_questao
 				     WHERE 	disciplina_assunto_questao_id_assunto = S.disciplina_assunto_id ) AS assunto_total_questoes
@@ -76,6 +77,23 @@
 			return $run;
 
 		}
+
+		function dropAssunto($assunto_id){
+			$star = $this->conn->prepare("
+				DELETE
+				FROM
+				    `disciplina_assunto`
+				WHERE
+				    disciplina_assunto_id = :disciplina_assunto_id  ");
+
+			$star->bindValue(":disciplina_assunto_id", $assunto_id, PDO::PARAM_INT);
+
+			$run = $star->execute();
+			return $run;
+
+		}
+
+
 
 
 	}
