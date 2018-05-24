@@ -10,15 +10,12 @@
         <!-- iOS Safari -->
         <meta name="apple-mobile-web-app-status-bar-style" content="##000080">
 
-
         <!-- icone -->
         <link rel="icon" type="imagem/png" href="./imagem/icone.png" />
 
-
-
-
         <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+        
         <style>
             #title-panel{
                font-size: 21pt; 
