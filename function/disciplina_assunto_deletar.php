@@ -21,9 +21,9 @@
 
 		// SE CADASTRADO COM SUCESSO RETORNARA TRUE E CAIRA NA CONDICAO QUE DEIXARA A MENSAGEM
 		if($resultado_deletar_assunto){
-			$_SESSION['success_msg_DELETAR_ASSUNTO'] = "Disciplina deletada com sucesso!";
+			$_SESSION['success_msg_DELETAR_ASSUNTO'] = "<b>Disciplina</b> deletada com sucesso!";
 		}else{
-			$_SESSION['erro_msg_DELETAR_ASSUNTO'] = "Disciplina não foi deletada com sucesso!";
+			$_SESSION['erro_msg_DELETAR_ASSUNTO'] = "<b>Disciplina</b> não foi deletada com sucesso!";
 		}
 
 
