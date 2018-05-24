@@ -59,6 +59,29 @@
 			return $star;
 		}
 
+
+		function listAssunto($assunto_id){
+			$star = $this->conn->prepare("
+				SELECT
+				    * ,
+				    (SELECT COUNT(*) 
+				     FROM disciplina_assunto_questao
+				     WHERE 	disciplina_assunto_questao_id_assunto = S.disciplina_assunto_id ) AS assunto_total_questoes
+				FROM
+				    disciplina_assunto AS S
+				WHERE
+					S.disciplina_assunto_id = :assunto_id
+			    ORDER BY
+			    	disciplina_assunto_nome");
+
+			$star->bindValue(":assunto_id", $assunto_id, PDO::PARAM_INT);
+			$run = $star->execute();
+			$rs = $star->fetch(PDO::FETCH_ASSOC);
+			return $rs;
+		}
+
+
+
 		function newAssunto($disciplina_assunto_id_disciplina, $disciplina_assunto_nome){
 			$star = $this->conn->prepare("
 				INSERT INTO `disciplina_assunto`(
@@ -91,6 +114,25 @@
 			$run = $star->execute();
 			return $run;
 
+		}
+
+		function updateAssunto ($disciplina_assunto_id_disciplina, $disciplina_assunto_nome, $disciplina_assunto_id ){
+			$star = $this->conn->prepare("
+				UPDATE
+				    `disciplina_assunto`
+				SET
+				    `disciplina_assunto_id_disciplina` = :disciplina_assunto_id_disciplina,
+				    `disciplina_assunto_nome` = :disciplina_assunto_nome,
+				    `disciplina_assunto_update_at` = CURRENT_TIMESTAMP() 
+				WHERE
+				    `disciplina_assunto_id` = :disciplina_assunto_id");
+
+			$star->bindValue(":disciplina_assunto_id_disciplina", $disciplina_assunto_id_disciplina, PDO::PARAM_INT);
+			$star->bindValue(":disciplina_assunto_id", $disciplina_assunto_id, PDO::PARAM_INT);
+			$star->bindValue(":disciplina_assunto_nome", $disciplina_assunto_nome);
+
+			$run = $star->execute();
+			return $run;
 		}
 
 

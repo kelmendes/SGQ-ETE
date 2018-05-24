@@ -108,7 +108,7 @@
                                                     </a>
                                                     
                                                     
-                                                    <a href="./disciplina_update?id=<?php echo $rows_assuntos['disciplina_assunto_id']; ?>" class="btn btn-xs btn-info">
+                                                    <a href="./disciplina_assunto_update?id=<?php echo $rows_assuntos['disciplina_assunto_id']; ?>" class="btn btn-xs btn-info">
                                                         <span class="glyphicon glyphicon-pencil"></span>
                                                     </a>
                                                     
