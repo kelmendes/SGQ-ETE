@@ -166,7 +166,11 @@
 
                             <div class="form-group">
                                 <label for="user_role">Permissão</label>
-                                <input type="text" class="form-control" name="user_role" placeholder="Email" required maxlength="100">
+                                <select class="form-control" name="user_role" required="">
+                                    <option value="">Permissão</option>
+                                    <option value="2">Administração</option>
+                                    <option value="1">Padrão</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
