@@ -124,10 +124,16 @@
                             
                         </div>
                     </div>
-                </div>
-                <!-- end col-md-6 --> 
-            </div>
-            <!-- end  row --> 
+
+                    <nav aria-label="pagination nav">
+                        <ul class="pager">
+                            <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span>Previous</a></li>
+                            <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                    </nav><!-- end pagination nav -->
+
+                </div><!-- end col-md-6 --> 
+            </div><!-- end  row --> 
         </div>
 
         <!-- ADICIONANDO FOOTER PADRÃO -->
