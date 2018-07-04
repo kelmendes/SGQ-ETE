@@ -43,27 +43,23 @@
     $pdf->AddPage();
 
     // ADICIONANDO LOGO
-    $pdf->Image('./imagem/logo_ETE.jpg',10,5,-400);
-    $pdf->Image('./imagem/logo_INTEGRAL.png',155,5,-160);
+    $pdf->Image('./imagem/logo_ETE.jpg',5,3,-550);
+    $pdf->Image('./imagem/logo_INTEGRAL.png',175,3,-260);
 
     // NOME ESCOLA
     $pdf->SetFont('Arial','B',13);
-    $pdf->Cell(190,5,utf8_decode(''),0,1, 'C');
+    //$pdf->Cell(190,,utf8_decode(''),1,1, 'C');
     $pdf->Cell(190,5,utf8_decode('Escola Técnica Estadual de Palmares'),0,1, 'C');
     $pdf->SetFont('Arial','B',11);
     $pdf->Cell(190,5,utf8_decode('BR-101, Palmares - PE, 55540-000'),0,1, 'C');
 
-    // QUEBRA DE LINHA APOS NOME DA ESCOLA 
-    $pdf->Ln();
-    $pdf->Ln();
-
     // INFORMACOES DO ALUNO, PROFESSOR E DISCIPLINA 
     $pdf->SetFont('Arial','',11);
-    $pdf->Cell(19,6,'Aluno (a): ',0,1, 'L');
-    $pdf->Cell(80,6,'Curso: ',0,0, 'L');
-    $pdf->Cell(80,6,'Disciplina: ',0,1, 'L');
-    $pdf->Cell(80,6,'Professor: ',0,0, 'L');
-    $pdf->Cell(60,6,'Turma: ',0,0, 'L');
+    $pdf->Cell(150,6,'Aluno (a): __________________________________________________________',0,1, 'L');
+    $pdf->Cell(80,6,'Curso: ______________________________',0,0, 'L');
+    $pdf->Cell(80,6,'Disciplina: ____________________________',0,1, 'L');
+    $pdf->Cell(80,6,'Professor: ___________________________',0,0, 'L');
+    $pdf->Cell(60,6,'Turma: ________________',0,0, 'L');
     $pdf->Cell(12,6,'Data: ',0,0, 'L');
     $pdf->Cell(32,6,'___ / ___ / _____ ',0,1, 'L');
 
@@ -78,7 +74,6 @@
     // CORPO DA PROVA 
     // QUEBRA DE LINHA 
     $pdf->Ln();
-    $pdf->Ln();
 
     // CONTAR QUESTAO 
     $num_questao = 1;
@@ -90,8 +85,9 @@
         if ( $rows_select_from_user['disciplina_assunto_questao_mutipla_escolha'] == 0){
 
             // TEMPLATE QUESTAO DISSERTATIVA
+            $pdf->SetFont('Arial','B',11);
+            $pdf->Cell(8,6, $num_questao . " - " ,0,0, 'L');
             $pdf->SetFont('Arial','',11);
-            $pdf->Cell(10,6, $num_questao . " - " ,0,0, 'L');
             $num_questao ++;
             $pdf->MultiCell(180, 4, utf8_decode( $rows_select_from_user['disciplina_assunto_questao_pergunta']) ,0,'J');
             $pdf->Ln();
@@ -100,8 +96,9 @@
         } elseif ( $rows_select_from_user['disciplina_assunto_questao_mutipla_escolha'] == 1) {
 
             // TEMPLATE QUESTAO MULTIPLA ESCOLHA
+            $pdf->SetFont('Arial','B',11);
+            $pdf->Cell(8,6, $num_questao . " - " , 0,0, 'L');
             $pdf->SetFont('Arial','',11);
-            $pdf->Cell(10,6, $num_questao . " - " , 0,0, 'L');
             $num_questao ++;
             $pdf->MultiCell(180, 4, utf8_decode($rows_select_from_user['disciplina_assunto_questao_pergunta']) ,0,'J');
 
