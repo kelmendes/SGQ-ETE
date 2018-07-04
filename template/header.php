@@ -28,14 +28,17 @@
                font-weight: bold;
             }
             .option-select ul li{
-              list-style-type: none;
-              float: left;
+                list-style-type: none;
+                float: left;
             }
             body {
-              background-color: #fff;
+                background-color: #fff;
             }
             .breadcrumb {
-              background-color: #E8E8E8;
+                background-color: #E8E8E8;
+            }
+            .dropdown:hover .dropdown-menu {
+                display: block;
             }
         </style>
 
