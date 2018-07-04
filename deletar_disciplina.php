@@ -90,7 +90,11 @@
                                             <tr>
                                                 <td><?php echo $rows_disciplinas['disciplina_id']; ?></td>
                                                 <td><?php echo $rows_disciplinas['disciplina_codigo']; ?></td>
-                                                <td><?php echo "<b>" . strtoupper($rows_disciplinas['disciplina_nome']) . "</b>"; ?></td>
+                                                <td><?php 
+                                                        $encoding = mb_internal_encoding();
+                                                        echo "<b>" . mb_strtoupper($rows_disciplinas['disciplina_nome'], $encoding) . "</b>"; 
+                                                    ?>   
+                                                </td>
                                                 <td><?php echo $rows_disciplinas['disciplina_total_assunto']; ?></td>
                                                 <td><?php echo $rows_disciplinas['disciplina_create_at']; ?></td>
                                                 <td>

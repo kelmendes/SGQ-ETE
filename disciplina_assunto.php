@@ -98,7 +98,9 @@
                                             <tr>
                                                 <td><?php echo $rows_assuntos['disciplina_assunto_id']; ?></td>
                                                 <td>
-                                                    <?php echo "<b>" . strtoupper($rows_assuntos['disciplina_assunto_nome']) . "</b>"; ?>
+                                                    <?php
+                                                        $encoding = mb_internal_encoding();
+                                                        echo "<b>" . mb_strtoupper($rows_assuntos['disciplina_assunto_nome'], $encoding ) . "</b>"; ?>
                                                 </td>
                                                 <td><?php echo $rows_assuntos['assunto_total_questoes']; ?></td>
                                                 <td><?php echo $rows_assuntos['disciplina_assunto_create_at']; ?></td>

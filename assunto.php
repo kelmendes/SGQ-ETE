@@ -107,7 +107,10 @@
                                                     Questões: 
                                                     <?php echo $rows_assuntos['assunto_total_questoes']; ?>
                                                 </span>
-                                                <?php echo strtoupper($rows_assuntos['disciplina_assunto_nome']); ?>
+                                                <?php 
+                                                    $encoding = mb_internal_encoding();
+                                                    echo mb_strtoupper($rows_assuntos['disciplina_assunto_nome'], $encoding); 
+                                                ?>
                                             </a>
                                         </ul>
                                      <!-- END parte a ser repetida no while -->

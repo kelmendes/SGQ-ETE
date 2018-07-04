@@ -94,7 +94,10 @@
                                                 <?php echo $rows_disciplinas['disciplina_total_assunto']; ?>
                                             </span>
 
-                                            <?php echo "<b>" . strtoupper($rows_disciplinas['disciplina_nome']) . "</b>"; ?>
+                                            <?php 
+                                                $encoding = mb_internal_encoding();
+                                                echo "<b>" . mb_strtoupper($rows_disciplinas['disciplina_nome'], $encoding) . "</b>"; 
+                                            ?>
 
 
                                         </a>
