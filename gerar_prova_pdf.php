@@ -17,11 +17,19 @@
 
     // COONEXAO COM DB TEMPORARIA 
 
-    // ATRIBUTOS DA CLASS PARA CONEXÃO 
+    // ATRIBUTOS DA CLASS PARA CONEXÃO
+    /*
     $host = 'localhost';
     $dbname = 'teste2';
     $user = 'root';
     $password = '';
+    */
+
+    // ATRIBUTOS DA CLASS PARA CONEXÃO 
+    $host = 'testep1.mysql.dbaas.com.br';
+    $dbname = 'testep1';
+    $user = 'testep1';
+    $password = 'P@ssAlun0';
 
     $conn = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
@@ -55,13 +63,13 @@
 
     // INFORMACOES DO ALUNO, PROFESSOR E DISCIPLINA 
     $pdf->SetFont('Arial','',11);
-    $pdf->Cell(150,6,'Aluno (a):  _________________________________________________________________',0,1, 'L');
-    $pdf->Cell(80,6,'Curso: ______________________________',0,0, 'L');
-    $pdf->Cell(80,6,'Disciplina: ____________________________',0,1, 'L');
-    $pdf->Cell(80,6,'Professor: ___________________________',0,0, 'L');
-    $pdf->Cell(60,6,'Turma: ________________',0,0, 'L');
-    $pdf->Cell(12,6,'Data: ',0,0, 'L');
-    $pdf->Cell(32,6,'___ / ___ / _____ ',0,1, 'L');
+    $pdf->Cell(122,6,'Aluno (a):  ______________________________________________',1,0, 'L');
+    $pdf->Cell(70,6,'Curso: ________________________',1,1, 'L');
+    $pdf->Cell(90,6,'Disciplina: ____________________________',1,0, 'L');
+    $pdf->Cell(80,6,'Professor: ___________________________',1,1, 'L');
+    $pdf->Cell(60,6,'Turma: ________________',1,0, 'L');
+    $pdf->Cell(12,6,'Data: ',1,0, 'L');
+    $pdf->Cell(32,6,'___ / ___ / _____ ',1,1, 'L');
 
 
 
@@ -111,8 +119,7 @@
                 // ALTERNATIVAS TEMPLATE - MULTIPLA ESCOLHA
                 $pdf->Ln();
                 // ESPACO IDENTACAO
-                $pdf->Cell(10,6,'',0,0, 'L');
-                $pdf->Cell(9, 4,$letras_questao[$temp_posicao_letra] . ' )',0,0, 'L');
+                $pdf->Cell(19, 3,$letras_questao[$temp_posicao_letra] . ' )',0,0, 'R');
                 $temp_posicao_letra ++;
                 // CONSULTANDO AS ALTERNATIVAS 
                 $pdf->MultiCell(170, 3, utf8_decode($rows_alternativas['disciplina_assunto_questao_mutipla_escolha_text']) ,0,'J');
