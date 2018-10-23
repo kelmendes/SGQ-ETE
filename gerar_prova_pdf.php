@@ -26,10 +26,10 @@
     */
 
     // ATRIBUTOS DA CLASS PARA CONEXÃO 
-    $host = 'testep1.mysql.dbaas.com.br';
-    $dbname = 'testep1';
-    $user = 'testep1';
-    $password = 'P@ssAlun0';
+    $host = 'localhost';
+    $dbname = 'teste2';
+    $user = 'root';
+    $password = '';
 
     $conn = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
@@ -65,8 +65,8 @@
     $pdf->SetFont('Arial','',11);
     $pdf->Cell(122,6,'Aluno (a):  ______________________________________________',0,0, 'L');
     $pdf->Cell(70,6,'Curso: ________________________',0,1, 'L');
-    $pdf->Cell(90,6,'Disciplina: ____________________________',0,0, 'L');
-    $pdf->Cell(80,6,'Professor: ___________________________',0,1, 'L');
+    $pdf->Cell(90,6,'Professor: ____________________________',0,0, 'L');
+    $pdf->Cell(80,6,'Disciplina: ___________________________',0,1, 'L');
     $pdf->Cell(60,6,'Turma: ________________',0,0, 'L');
     $pdf->Cell(12,6,'Data: ',0,0, 'L');
     $pdf->Cell(32,6,'___ / ___ / _____ ',0,1, 'L');
