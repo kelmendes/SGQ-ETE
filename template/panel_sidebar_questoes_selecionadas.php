@@ -57,7 +57,7 @@
                                 </div>
                                 
                                 <div class="btn-group" role="group">
-                                    <a href="./gerar_prova_pdf" role="button" class="btn btn-default">Print</a>
+                                    <a href="./gerar_prova_pdf" role="button" class="btn btn-default">Gerar prova</a>
                                 </div>
 
                             </div>
